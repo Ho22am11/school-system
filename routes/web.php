@@ -12,18 +12,19 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::group(
+    ['middleware' => ['guest']
+    ], function(){ 
+        Route::get('/', function () {
+            return view('auth.login');
+        });
 
-Route::get('/', function () {
-    return view('auth.login');
-});
-
-
-
+    });
 
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ,'auth' ]
     ], function(){ 
         Route::get('/dashboard', function () {
             return view('index');
