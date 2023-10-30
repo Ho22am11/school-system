@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Grade\GradeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// Route::get('/grade', [GradeController::class, 'index']);
+
+
+
 Route::group(
     ['middleware' => ['guest']
     ], function(){ 
@@ -29,9 +33,13 @@ Route::group(
         Route::get('/dashboard', function () {
             return view('index');
         });
+        Route::resource('grade',GradeController::class);
 
     });
 
+
+
+    
 
 
 

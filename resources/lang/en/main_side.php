@@ -2,6 +2,9 @@
 
 return [
 
-    "Dashboard" => "Dashboard"
+    "Dashboard" => "Dashboard" ,
+    "Grade" => "Grade",
+    "school_system" => "School System",
+    "grade_list" => "Grade List",
 
 ];
