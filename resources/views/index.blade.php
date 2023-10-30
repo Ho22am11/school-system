@@ -51,10 +51,10 @@ home
 									<div class="d-flex">
 										<div class="">
 											<h4 class="tx-20 font-weight-bold mb-1 text-white">
-                                                {{ '$'.number_format(\App\Models\invoices::sum('Total'),2)}}
+                                               
 
                                             </h4>
-											<p class="mb-0 tx-12 text-white op-7">{{ 'اجمالي عدد الفواتير'.' '.count(\App\Models\invoices::all())}}</p>
+											<p class="mb-0 tx-12 text-white op-7"></p>
 										</div>
 										<span class="float-right my-auto mr-auto">
 											<i class="fas fa-arrow-circle-up text-white"></i>

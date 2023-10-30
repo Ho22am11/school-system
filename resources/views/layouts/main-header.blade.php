@@ -18,6 +18,15 @@
 					</div>
 					<div class="main-header-right">
 						<ul class="nav">
+							<ul>
+								@foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+									<li>
+										<a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+											{{ $properties['native'] }}
+										</a>
+									</li>
+								@endforeach
+							</ul>
 							<li class="">
 								<div class="dropdown  nav-itemd-none d-md-flex">
 									<a href="#" class="d-flex  nav-item nav-link pl-0 country-flag1" data-toggle="dropdown" aria-expanded="false">
