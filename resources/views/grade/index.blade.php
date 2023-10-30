@@ -75,10 +75,11 @@
                                      <?php $i = 0; ?>
                                            
                                                <?php $i++; ?>
+                                               @foreach ($grades as $grade)
                                              <tr>
                                                <td>{{ $i }}</td>
-                                                <td></td>
-                                              x
+                                                <td>{{$grade->name}}</td>
+                                              
 
 
                             
@@ -98,6 +99,8 @@
                                                 data-section_name="" data-toggle="modal"
                                                 href="#modaldemo9">حذف</button>
                                             @endcan
+
+                                            @endforeach
                                             </td>
                                              </tr>
                                    
@@ -125,8 +128,12 @@
                                     {{ csrf_field() }}
 
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1"> {{ trans('grade_list.grade_name') }}</label>
-                                        <input type="text" class="form-control" id="grade_name" name="grade_name" >
+                                        <label for="exampleInputEmail1">ادخل لاسم بلعربي</label>
+                                        <input type="text" class="form-control" id="grade_name" name="grade_name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">add name in english</label>
+                                        <input type="text" class="form-control" id="grade_name_en" name="grade_name_en" required>
                                     </div>
 
                                    

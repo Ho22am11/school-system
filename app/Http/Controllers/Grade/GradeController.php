@@ -11,7 +11,8 @@ class GradeController extends Controller
 {
     public function index()
     {
-        return view('grade.index');
+        $grades = Grade::all();
+        return view('grade.index' , compact('grades'));
     }
 
     /**
@@ -25,14 +26,14 @@ class GradeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreGradeRequest $request)
+    public function store(Request $request)
     {
-        $validated = $request->validated();
-        
-        Grade::create([
-            'name' => $request->grade_name,
+       
+   
+        $Grade = new Grade();
+        $Grade->name =['en' => $request->grade_name_en , 'ar' => $request->grade_name];
+        $Grade->save();
 
-        ]);
         return back();
     }
 
