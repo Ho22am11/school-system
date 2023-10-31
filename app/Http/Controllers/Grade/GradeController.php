@@ -33,8 +33,9 @@ class GradeController extends Controller
         $Grade = new Grade();
         $Grade->name =['en' => $request->grade_name_en , 'ar' => $request->grade_name];
         $Grade->save();
+        return back()->with('message', 'the post has');
+    
 
-        return back();
     }
 
     /**

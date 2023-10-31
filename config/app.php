@@ -169,6 +169,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Yoeunes\Toastr\ToastrServiceProvider::class,
        // Maatwebsite\Excel\ExcelServiceProvider::class,
        // App\Providers\BroadcastServiceProvider::class,
      
