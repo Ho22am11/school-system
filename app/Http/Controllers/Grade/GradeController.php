@@ -12,7 +12,7 @@ class GradeController extends Controller
     public function index()
     {
         $grades = Grade::all();
-        return view('grade.index' , compact('grades'));
+        return view('grade.index',compact('grades'));
     }
 
     /**
@@ -33,8 +33,8 @@ class GradeController extends Controller
         $Grade = new Grade();
         $Grade->name =['en' => $request->grade_name_en , 'ar' => $request->grade_name];
         $Grade->save();
-        return back()->with('message', 'the post has');
-    
+        session()->flash('Add', trans('message.secces_grade'));
+        return back();
 
     }
 
