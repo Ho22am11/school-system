@@ -91,6 +91,7 @@
                                              <tr>
                                                <td>{{ $i }}</td>
                                                 <td>{{$grade->name}}</td>
+                                             
                                               
 
 
@@ -105,14 +106,18 @@
                                                 data-target="#exampleModal2">تعديل</button>
                                  
 
+                                            </td>
+                                            <td>
 
 
-                                            <button class="btn btn-outline-danger btn-sm " data-id=""
-                                                data-section_name="" data-toggle="modal"
-                                                href="#modaldemo9">حذف</button>
-                                            
-                                               
-                                        
+                                                <form action="{{ route('grade.delete' , [$grade->id])}}" method="post">
+                                                    @csrf
+                                                    <button type="submit"  class="btn btn-outline-danger btn-sm">حذف</button>
+                                                </form>
+
+                                    
+                                                                 
+                                    
                                             </td>
                                              </tr>
 
@@ -137,6 +142,7 @@
 
             </div>
 				</div>
+
 
                 <!-- edit -->
                 <div class="modal" id="exampleModal2">

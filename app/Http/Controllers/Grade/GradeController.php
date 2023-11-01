@@ -81,8 +81,12 @@ class GradeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Grade $grade)
+    public function destroy($id)
     {
-        //
+        $grade = Grade::findOrFail($id);
+        $grade->delete();
+        session()->flash('Add',trans('message.secces_delete'));
+        return back();
+
     }
 }

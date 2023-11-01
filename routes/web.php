@@ -32,9 +32,10 @@ Route::group(
     ], function(){ 
         Route::get('/dashboard', function () {
             return view('index');
-        });
+        })->name('dashboard');
         Route::resource('grade',GradeController::class);
         Route::post('/grade/up',[GradeController::class , 'update'])->name('grade.update');
+        Route::post('/grade/delete/{id}',[GradeController::class , 'destroy'])->name('grade.delete');
    
 
     });
