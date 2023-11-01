@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Grade;
 use App\Models\Grade;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreGradeRequest;
+use Exception;
 use Illuminate\Http\Request;
 
 
@@ -30,11 +31,22 @@ class GradeController extends Controller
     {
        
    
+        try {
+
+        if(Grade::where('name->ar',$request->grade_name)->orwhere('name->en',$request->grade_name_en)->exists()){
+            return redirect()->back()->withErrors(trans('message.already_exist'));
+
+        }
         $Grade = new Grade();
         $Grade->name =['en' => $request->grade_name_en , 'ar' => $request->grade_name];
         $Grade->save();
         session()->flash('Add', trans('message.secces_grade'));
         return back();
+        }
+        catch
+        (Exception $e){
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
 
     }
 
