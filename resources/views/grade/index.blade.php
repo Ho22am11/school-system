@@ -85,8 +85,9 @@
 
                                      <?php $i = 0; ?>
                                            
-                                               <?php $i++; ?>
-                                               @foreach ($grades as $grade)
+                                               
+                                        @foreach ($grades as $grade)
+                                        <?php $i++; ?>
                                              <tr>
                                                <td>{{ $i }}</td>
                                                 <td>{{$grade->name}}</td>
@@ -97,23 +98,31 @@
 
 
                                             <td><button class="btn btn-outline-success btn-sm"
-                                                data-id=""  data-section_name=""
-                                                href="#exampleModal2"
-                                                    data-description="" data-toggle="modal"
+
+                                                href="#exampleModal2" data-id="{{ $grade->id }}"  data-grade_name="{{ $grade->getTranslation('name' , 'ar') }}"
+                                                data-grade_name_en="{{ $grade->getTranslation('name' , 'en') }}"
+                                                     data-toggle="modal"
                                                 data-target="#exampleModal2">تعديل</button>
                                  
 
-                                            @can('حذف قسم')
 
 
                                             <button class="btn btn-outline-danger btn-sm " data-id=""
                                                 data-section_name="" data-toggle="modal"
                                                 href="#modaldemo9">حذف</button>
-                                            @endcan
-
-                                            @endforeach
+                                            
+                                               
+                                        
                                             </td>
                                              </tr>
+
+                                
+                                                  
+                                         @endforeach
+                                                         
+                                </form>
+                              </div>
+                  </div>
                                    
 
 
@@ -128,6 +137,40 @@
 
             </div>
 				</div>
+
+                <!-- edit -->
+                <div class="modal" id="exampleModal2">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content modal-content-demo">
+                            <div class="modal-header">
+                                <h6 class="modal-title">{{ trans('grade_list.edit_grade') }}</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="{{ route('grade.update')}}" method="post" autocomplete="off">
+                                    {{ csrf_field() }}
+
+                                    <div class="form-group">
+                                        <input type="hidden" id="id" name="id">
+                                        <label for="exampleInputEmail1">ادخل لاسم بلعربي</label>
+                                        <input  type="text" class="form-control" id="grade_name" name="grade_name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">add name in english</label>
+                                        <input  type="text" class="form-control" id="grade_name_en" name="grade_name_en" required>
+                                    </div>
+
+                                   
+
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-success">{{ trans('grade_list.confirm')}}</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ trans('grade_list.close')}}</button>
+                                    </div>
+                                </form>
+                         </div>
+                     </div>
+                  </div>
+                </div>
+                <!-- model add -->
                 <div class="modal" id="modaldemo8">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content modal-content-demo">
@@ -150,8 +193,8 @@
                                    
 
                                     <div class="modal-footer">
-                                        <button type="submit" class="btn btn-success">تاكيد</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
+                                        <button type="submit" class="btn btn-success">{{ trans('grade_list.confirm')}}</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ trans('grade_list.close')}}</button>
                                     </div>
                                 </form>
                          </div>
@@ -180,5 +223,18 @@
 <script src="{{URL::asset('assets/plugins/datatable/js/buttons.colVis.min.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/datatable/js/dataTables.responsive.min.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/datatable/js/responsive.bootstrap4.min.js')}}"></script>
+<script>
+    $('#exampleModal2').on('show.bs.modal', function(event) {
+        var button = $(event.relatedTarget)
+        var id = button.data('id')
+        var grade_name = button.data('grade_name')
+        var grade_name_en = button.data('grade_name_en')
 
+        var modal = $(this)
+        modal.find('.modal-body #id').val(id);
+        modal.find('.modal-body #grade_name').val(grade_name);
+        modal.find('.modal-body #grade_name_en').val(grade_name_en);
+
+    })
+</script>
 @endsection

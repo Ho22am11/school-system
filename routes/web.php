@@ -34,6 +34,8 @@ Route::group(
             return view('index');
         });
         Route::resource('grade',GradeController::class);
+        Route::post('/grade/up',[GradeController::class , 'update'])->name('grade.update');
+   
 
     });
 

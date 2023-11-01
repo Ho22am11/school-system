@@ -8,6 +8,9 @@ return [
     "grade_name" =>"اسم المرحله" ,
     "grade_all" => "جميع المراحل",
     "process" =>"العمليات" ,
+    "edit_grade" =>"تعديل المرحله" ,
+    "close" => "اغلاق" ,
+    "confirm" => "تاكيد",
 
 
 

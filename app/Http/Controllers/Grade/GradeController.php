@@ -57,9 +57,25 @@ class GradeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Grade $grade)
+    public function update(Request $request)
     {
-        //
+    
+        try {
+            $grade = Grade::findOrFail($request->id);
+         $grade->update([
+            $grade->name = ['ar' => $request->grade_name , 'en' => $request->grade_name_en ]
+         ]);
+         session()->flash('Add',trans('message.secces_edit'));
+         return back();
+
+
+        }
+        catch
+        (\Exception $e){
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+        
+
     }
 
     /**
