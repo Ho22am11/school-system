@@ -10,5 +10,6 @@ return [
     "edit_grade" =>"Edit Grade" ,
     "close" => "Close" ,
     "confirm" => "Confirm",
+    "delete" => "Delete" ,
 
 ];

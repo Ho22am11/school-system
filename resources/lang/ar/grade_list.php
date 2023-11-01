@@ -11,6 +11,10 @@ return [
     "edit_grade" =>"تعديل المرحله" ,
     "close" => "اغلاق" ,
     "confirm" => "تاكيد",
+    "delete" => "حذف" ,
+    "add_row" =>"اضافه صف",
+
+
 
 
 

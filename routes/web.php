@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Grade\GradeController;
+use App\Http\Controllers\Classroom\ClassroomController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +37,7 @@ Route::group(
         Route::resource('grade',GradeController::class);
         Route::post('/grade/up',[GradeController::class , 'update'])->name('grade.update');
         Route::post('/grade/delete/{id}',[GradeController::class , 'destroy'])->name('grade.delete');
+        Route::resource('/classroom',ClassroomController::class);
    
 
     });
