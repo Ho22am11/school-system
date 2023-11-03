@@ -88,11 +88,12 @@
                                      <?php $i = 0; ?>
                                            
                                                
-                                        @foreach ($classrooms as $grade)
+                                        @foreach ($classrooms as $classroom)
                                         <?php $i++; ?>
                                              <tr>
                                                <td>{{ $i }}</td>
-                                                <td>{{$grade->name}}</td>
+                                                <td>{{$classroom->name}}</td>
+                                                <td>{{$classroom->grade->name}}</td>
                                              
                                               
 
@@ -100,19 +101,20 @@
                             
 
 
-                                            <td><button class="btn btn-outline-success btn-sm"
+                                                <td><button class="btn btn-outline-success btn-sm"
 
-                                                href="#exampleModal2" data-id="{{ $grade->id }}"  data-grade_name="{{ $grade->getTranslation('name' , 'ar') }}"
-                                                data-grade_name_en="{{ $grade->getTranslation('name' , 'en') }}"
+                                                href="#exampleModal2" data-id="{{ $classroom->id }}"  data-grade_name="{{ $classroom->getTranslation('name' , 'ar') }}"
+                                                data-grade_name_en="{{ $classroom->getTranslation('name' , 'en') }}"
                                                      data-toggle="modal"
                                                 data-target="#exampleModal2">تعديل</button>
                                  
 
                                             </td>
+                                            
                                             <td>
 
 
-                                                <form action="{{ route('grade.delete' , [$grade->id])}}" method="post">
+                                                <form action="{{ route('grade.delete' , [$classroom->id])}}" method="post">
                                                     @csrf
                                                     <button type="submit"  class="btn btn-outline-danger btn-sm">حذف</button>
                                                 </form>

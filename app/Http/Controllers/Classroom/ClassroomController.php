@@ -31,9 +31,31 @@ class ClassroomController extends Controller
      */
     public function store(Request $request)
     {
-       return $request;
-   
-    }
+       try{
+        if(Classroom::where('name->ar',$request->name)->orwhere('name->en' ,$request->name_class_en )->exists()){
+            return redirect()->back()->withErrors(trans('message.already_exist'));
+
+        }
+
+      
+    
+        Classroom::create([
+            'name' => ['en' => $request->name_class_en , 'ar' => $request->name],
+            'grade_id' => $request->Grade_id
+
+        ]);
+        session()->flash('Add', trans('message.secces_grade'));
+        return back();
+        return back();
+       }
+       catch
+        (Exception $e){
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+
+     } 
+
+     
 
     /**
      * Display the specified resource.
