@@ -114,7 +114,8 @@
                                             <td>
 
 
-                                                <form action="{{ route('grade.delete' , [$classroom->id])}}" method="post">
+                                                <form action="{{ route('classroom.destroy' , [$classroom->id])}}" method="post">
+                                                    {{method_field('DELETE')}}
                                                     @csrf
                                                     <button type="submit"  class="btn btn-outline-danger btn-sm">{{ trans('grade_list.delete')}}</button>
                                                 </form>

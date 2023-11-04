@@ -106,7 +106,10 @@ class ClassroomController extends Controller
      */
     public function destroy($id)
     {
-       
+       $classroom = Classroom::findOrFail($id);
+       $classroom->delete();
+       session()->flash('Add',trans('message.secces_delete'));
+       return back();
 
     }
 }
