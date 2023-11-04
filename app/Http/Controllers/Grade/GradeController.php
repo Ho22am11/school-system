@@ -73,7 +73,7 @@ class GradeController extends Controller
     {
     
         try {
-            $grade = Grade::findOrFail($request->id);
+        $grade = Grade::findOrFail($request->id);
          $grade->update([
             $grade->name = ['ar' => $request->grade_name , 'en' => $request->grade_name_en ]
          ]);

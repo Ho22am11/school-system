@@ -13,6 +13,7 @@ return [
     "confirm" => "تاكيد",
     "delete" => "حذف" ,
     "add_row" =>"اضافه صف",
+    "edit" => "تعديل",
 
 
 

@@ -103,10 +103,10 @@
 
                                                 <td><button class="btn btn-outline-success btn-sm"
 
-                                                href="#exampleModal2" data-id="{{ $classroom->id }}"  data-grade_name="{{ $classroom->getTranslation('name' , 'ar') }}"
-                                                data-grade_name_en="{{ $classroom->getTranslation('name' , 'en') }}"
+                                                href="#exampleModal2" data-id="{{ $classroom->id }}"  data-name="{{ $classroom->getTranslation('name' , 'ar') }}"
+                                                data-name_en="{{ $classroom->getTranslation('name' , 'en') }}" data-grade_id ={{ $classroom->grade_id }}
                                                      data-toggle="modal"
-                                                data-target="#exampleModal2">تعديل</button>
+                                                data-target="#exampleModal2">{{ trans('grade_list.edit')}}</button>
                                  
 
                                             </td>
@@ -116,7 +116,7 @@
 
                                                 <form action="{{ route('grade.delete' , [$classroom->id])}}" method="post">
                                                     @csrf
-                                                    <button type="submit"  class="btn btn-outline-danger btn-sm">حذف</button>
+                                                    <button type="submit"  class="btn btn-outline-danger btn-sm">{{ trans('grade_list.delete')}}</button>
                                                 </form>
 
                                     
@@ -148,20 +148,20 @@
 				</div>
 
 
-                <!-- edit -->
+                <!-- add model  -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
+                  aria-hidden="true">
+                   <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                 <div class="modal-header">
                 <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title" id="exampleModalLabel">
                     {{ trans('classrooms.classroom_add') }}
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div>
-            <div class="modal-body">
+                   </div>
+                      <div class="modal-body">
 
                 <form class=" row mb-30" action="{{ route('classroom.store')}}" method="POST">
                     @csrf
@@ -253,6 +253,62 @@
 
 </div>
 
+<!-- edit -->
+
+<div class="modal" id="exampleModal2">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-content-demo">
+            <div class="modal-header">
+                <h6 class="modal-title">{{ trans('grade_list.edit_grade') }}</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                
+                <form action="{{ route('classroom.update' , $id = 1 )}}" method="post" autocomplete="off">
+                    {{method_field('put')}}
+                    {{ csrf_field() }}
+
+                    <div class="form-group">
+                        <input type="hidden" id="id" name="id">
+                        <label for="exampleInputEmail1">ادخل لاسم بلعربي</label>
+                        <input  type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">add name in english</label>
+                        <input  type="text" class="form-control" id="name_en" name="name_en" required>
+                    </div>
+                    <div class="col">
+                        <label for="Name_en"
+                        class="mr-sm-2">{{ trans('grade_list.grade_add')}}
+                        :</label>
+
+                        <div class="box">
+                            <select   id="grade_id" name="grade_id" class="form-control">
+                                @foreach ($Grades as $Grade)
+                                    <option value="{{ $Grade->id }}">{{ $Grade->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                    </div>
+
+                   
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">{{ trans('grade_list.confirm')}}</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ trans('grade_list.close')}}</button>
+                    </div>
+                </form>
+         </div>
+     </div>
+  </div>
+</div>
+
+
+
+
+
+
+
 				<!-- row closed -->
 			</div>
 			<!-- Container closed -->
@@ -279,13 +335,17 @@
     $('#exampleModal2').on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget)
         var id = button.data('id')
-        var grade_name = button.data('grade_name')
-        var grade_name_en = button.data('grade_name_en')
+        var name = button.data('name')
+        var name_en = button.data('name_en')
+        var grade_id = button.data('grade_id')
+
 
         var modal = $(this)
         modal.find('.modal-body #id').val(id);
-        modal.find('.modal-body #grade_name').val(grade_name);
-        modal.find('.modal-body #grade_name_en').val(grade_name_en);
+        modal.find('.modal-body #name').val(name);
+        modal.find('.modal-body #name_en').val(name_en);
+        modal.find('.modal-body #grade_id').val(grade_id);
+
 
     })
 </script>

@@ -78,7 +78,26 @@ class ClassroomController extends Controller
      */
     public function update(Request $request)
     {
-    
+        try{
+
+        
+        $Classroom = Classroom::findOrFail($request->id);
+        $Classroom->update([
+
+            $Classroom->name = ['en' => $request->name_en , 'ar' => $request->name],
+            $Classroom->grade_id = $request->grade_id ,
+
+        ]);
+        session()->flash('Add', trans('message.secces_edit'));
+        return back();
+    }
+    catch
+    (Exception $e){
+        return redirect()->back()->witherrors(['error' => $e->getMessage()]);
+
+    }
+        
+
 
     }
 

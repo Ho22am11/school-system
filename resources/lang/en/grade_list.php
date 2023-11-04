@@ -11,5 +11,6 @@ return [
     "close" => "Close" ,
     "confirm" => "Confirm",
     "delete" => "Delete" ,
+    "edit" => "Edit",
 
 ];
