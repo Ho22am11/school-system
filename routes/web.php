@@ -38,6 +38,7 @@ Route::group(
         Route::post('/grade/up',[GradeController::class , 'update'])->name('grade.update');
         Route::post('/grade/delete/{id}',[GradeController::class , 'destroy'])->name('grade.delete');
         Route::resource('/classroom',ClassroomController::class);
+        Route::post('select_grade',[ClassroomController::class , 'select'])->name('select');
    
 
     });

@@ -49,7 +49,7 @@ class ClassroomController extends Controller
         return back();
        }
        catch
-        (Exception $e){
+        (\Exception $e){
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
 
@@ -60,9 +60,14 @@ class ClassroomController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show()
+    public function select(Request $request)
     {
-        //
+        $id = $request->grade_id;
+        $name = Grade::where('id' , $id)->first();
+        $Grades = Grade::all();
+        $classrooms = Classroom::where('grade_id', $id)->get();
+        return view('classroom.index', compact('classrooms' , 'Grades' , 'name'));
+
     }
 
     /**
@@ -92,7 +97,7 @@ class ClassroomController extends Controller
         return back();
     }
     catch
-    (Exception $e){
+    (\Exception $e){
         return redirect()->back()->witherrors(['error' => $e->getMessage()]);
 
     }

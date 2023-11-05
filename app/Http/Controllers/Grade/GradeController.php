@@ -95,10 +95,16 @@ class GradeController extends Controller
      */
     public function destroy($id)
     {
+        try {
         $grade = Grade::findOrFail($id);
         $grade->delete();
         session()->flash('Add',trans('message.secces_delete'));
         return back();
+        }
+        catch
+        (\Exception $e){
+            return redirect()->back()->withErrors(['error' => trans('message.reletion')]);
+        }
 
     }
 }

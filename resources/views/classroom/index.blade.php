@@ -63,8 +63,26 @@
                             <a class="modal-effect btn btn-outline-primary btn-block" data-effect="effect-scale" data-toggle="modal"
                              href="#exampleModal"> {{ trans('classrooms.classroom_add') }}
                             </a>
+                            <br><br>
                         </div>
                         <div class="row">
+                        <div class="card-header pb-0">
+                            <form action="{{ route('select')}}" method="POST" role="search" autocomplete="off">
+                                @csrf
+                               
+                                    <select   id="grade_id" name="grade_id" class="form-control">
+                                        <option value='حدد المرحله  ' selected> {{ $name->name ?? 'حدد المرحله ' }}  </option>
+
+                                        @foreach ($Grades as $Grade)
+                                            <option value="{{ $Grade->id }}">{{ $Grade->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    <button type="submit" class="btn btn-success">{{ trans('grade_list.confirm')}}</button>
+                                    
+                             
+                            </form>
+                        </div>
+                        <br><br>
                        
                         
                         <div class="table-responsive">
@@ -94,12 +112,6 @@
                                                <td>{{ $i }}</td>
                                                 <td>{{$classroom->name}}</td>
                                                 <td>{{$classroom->grade->name}}</td>
-                                             
-                                              
-
-
-                            
-
 
                                                 <td><button class="btn btn-outline-success btn-sm"
 
@@ -150,7 +162,7 @@
 
 
                 <!-- add model  -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                   aria-hidden="true">
                    <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -283,7 +295,8 @@
                         :</label>
 
                         <div class="box">
-                            <select   id="grade_id" name="grade_id" class="form-control">
+                        <select   id="grade_id" name="grade_id" class="form-control">
+                            <option value="حدد المرحله" selected>حدد المرحله</option>
                                 @foreach ($Grades as $Grade)
                                     <option value="{{ $Grade->id }}">{{ $Grade->name }}</option>
                                 @endforeach

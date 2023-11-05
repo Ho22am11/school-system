@@ -74,7 +74,8 @@
                     <div class="row">
 
                         <div class="col-lg-3 mg-t-20 mg-lg-t-0" id="type">
-                            <p class="mg-b-10">تحديد نوع الفواتير</p><select class="form-control select2" name="type"
+                            <p class="mg-b-10">تحديد نوع الفواتير</p>
+                            <select class="form-control select2" name="type"
                                 required>
                                 <option value="{{ $type ?? 'حدد نوع الفواتير' }}" selected>
                                     {{ $type ?? 'حدد نوع الفواتير' }}
