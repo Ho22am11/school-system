@@ -10,7 +10,7 @@ class Section extends Model
 {
     use HasFactory;
     use HasTranslations;
-    public $translatable = ['name' , 'status'];
+    public $translatable = ['name'];
     protected $fillable = [
         'name',
         'grade_id',

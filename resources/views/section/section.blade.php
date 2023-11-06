@@ -146,12 +146,16 @@
                                 <h6 class="modal-title">{{ trans('section.add_section')}}</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
                             </div>
                             <div class="modal-body">
-                                <form action="" method="post" autocomplete="off">
+                                <form action="{{ route('section.store')}}" method="post" autocomplete="off">
                                     {{ csrf_field() }}
 
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">{{ trans('section.name_section')}}</label>
+                                        <label for="exampleInputEmail1">ادخل الاسم بلعربي</label>
                                         <input type="text" class="form-control" id="name" name="name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">enter the name in english</label>
+                                        <input type="text" class="form-control" id="name_en" name="name_en">
                                     </div>
                                     <div class="col">
                                         <label for="inputName" class="control-label">{{ trans('grade_list.grade_name')}}</label>
@@ -303,7 +307,7 @@
                     success: function(data) {
                         $('select[name="classrooms"]').empty();
                         $.each(data, function(key, value) {
-                            $('select[name="classrooms"]').append('<option value="' + value + '">' + value + '</option>');
+                            $('select[name="classrooms"]').append('<option value="' + key + '">' + value + '</option>');
                         });
                     },
                 });

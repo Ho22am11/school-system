@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Section;
 use App\Http\Controllers\Controller;
 use App\Models\Classroom;
 use App\Models\Grade;
+use App\Models\Section;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -33,7 +35,23 @@ class SectionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            Section::create([
+                'name' => ['en'=>$request->name_en , 'ar' => $request->name],
+                'grade_id' => $request->grade_id ,
+                'classroom_id' => $request->classrooms,
+                'status' => 1 ,
+
+            ]);
+            session()->flash('Add',trans('message.secces_grade'));
+            return back();
+
+        }
+        catch
+        (\Exception $e){
+
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
     }
 
     /**
