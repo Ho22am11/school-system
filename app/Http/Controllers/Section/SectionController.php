@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Section;
 
 use App\Http\Controllers\Controller;
+use App\Models\Classroom;
+use App\Models\Grade;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class SectionController extends Controller
 {
@@ -12,7 +16,8 @@ class SectionController extends Controller
      */
     public function index()
     {
-        return view('section.section');
+        $grades = Grade::all();
+        return view('section.section', compact('grades'));
     }
 
     /**
@@ -34,9 +39,10 @@ class SectionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function getclassroom($id)
     {
-        //
+        $classrooms = Classroom::where("grade_id", $id)->pluck("name", "id");
+        return json_encode($classrooms);
     }
 
     /**

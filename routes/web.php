@@ -17,6 +17,7 @@ use App\Http\Controllers\Section\SectionController;
 // Route::get('/grade', [GradeController::class, 'index']);
 
 
+Route::get('/section/{id}',[SectionController::class ,'getclassroom']); 
 
 Route::group(
     ['middleware' => ['guest']
@@ -41,10 +42,13 @@ Route::group(
         Route::resource('/classroom',ClassroomController::class);
         Route::post('select_grade',[ClassroomController::class , 'select'])->name('select');
         Route::resource('/section', SectionController::class);
-   
+        
 
     });
 
+    
+
+   
 
 
     

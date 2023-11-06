@@ -138,29 +138,42 @@
                         </div>
                       </div>
                   </div>
+                  <!-- add model -->
                   <div class="modal" id="modaldemo8">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content modal-content-demo">
                             <div class="modal-header">
-                                <h6 class="modal-title">اضافه قسم</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                                <h6 class="modal-title">{{ trans('section.add_section')}}</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
                             </div>
                             <div class="modal-body">
                                 <form action="" method="post" autocomplete="off">
                                     {{ csrf_field() }}
 
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">اسم القسم</label>
-                                        <input type="text" class="form-control" id="section_name" name="section_name">
+                                        <label for="exampleInputEmail1">{{ trans('section.name_section')}}</label>
+                                        <input type="text" class="form-control" id="name" name="name">
                                     </div>
-
-                                    <div class="form-group">
-                                        <label for="exampleFormControlTextarea1">ملاحظات</label>
-                                        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                                    <div class="col">
+                                        <label for="inputName" class="control-label">{{ trans('grade_list.grade_name')}}</label>
+                                        <select name="grade_id" class="form-control SlectBox"  onchange="console.log($(this).val())" >
+                                            <!--placeholder-->
+                                            <option value="" selected disabled>{{ trans('section.chose_section')}}</option>
+                                            @foreach ($grades as $grade)
+                                            <option value="{{ $grade->id  }}">{{ $grade->name }}</option>
+                                            @endforeach
+                                           
+                                        </select>
                                     </div>
+                                    <div class="col">
+                                        <label for="inputName" class="control-label">{{ trans('classrooms.classroom_name')}}</label>
+                                        <select id="classrooms" name="classrooms" class="form-control">
+                                        </select>
+                                    </div>
+                                   
 
                                     <div class="modal-footer">
-                                        <button type="submit" class="btn btn-success">تاكيد</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
+                                        <button type="submit" class="btn btn-success">{{ trans('grade_list.confirm')}}</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ trans('grade_list.close')}}</button>
                                     </div>
                                 </form>
                          </div>
@@ -178,7 +191,7 @@
 
 
 
-                   <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                    aria-hidden="true">
                         <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -278,6 +291,31 @@
 <!--Internal  Datatable js -->
 <script src="{{URL::asset('assets/js/table-data.js')}}"></script>
 <script src="{{URL::asset('assets/js/modal.js')}}"></script>
+<script>
+    $(document).ready(function() {
+        $('select[name="grade_id"]').on('change', function() {
+            var GradeId = $(this).val();
+            if (GradeId) {
+                $.ajax({
+                    url: "{{ URL::to('section') }}/" + GradeId,
+                    type: "GET",
+                    dataType: "json",
+                    success: function(data) {
+                        $('select[name="classrooms"]').empty();
+                        $.each(data, function(key, value) {
+                            $('select[name="classrooms"]').append('<option value="' + value + '">' + value + '</option>');
+                        });
+                    },
+                });
+
+            } else {
+                console.log('AJAX load did not work');
+            }
+        });
+
+    });
+
+</script>
 <script>
     $('#exampleModal2').on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget)
