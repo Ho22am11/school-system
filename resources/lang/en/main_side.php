@@ -8,5 +8,7 @@ return [
     "grade_list" => "Grade List",
     "classrooms" => "Classrooms",
     "classrooms_list" => "Classrooms List",
+    "section" => "Sections" ,
+    "section_list" => "Sections List",
 
 ];

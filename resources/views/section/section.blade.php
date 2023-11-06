@@ -16,7 +16,7 @@
 				<div class="breadcrumb-header justify-content-between">
 					<div class="my-auto">
 						<div class="d-flex">
-							<h4 class="content-title mb-0 my-auto">الاعدادات</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ الاقسام</span>
+							<h4 class="content-title mb-0 my-auto">{{trans('main_side.section')}}</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ {{trans('main_side.section_list')}}</span>
 						</div>
 					</div>
 
@@ -61,39 +61,38 @@
                                <!-- end add massege-->
                                <!--  delete massege-->
 
-                            @if (session()->has('delete'))
+                         @if (session()->has('delete'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                         <strong>{{ session()->get('delete') }}</strong>
+                            <strong>{{ session()->get('delete') }}</strong>
                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                              <span aria-hidden="true">&times;</span>
                              </button>
                               </div>
-                                  @endif
+                        @endif
 
                                <!-- end delete massege-->
                     <div class="col-xl-12">
 						<div class="card">
 							<div class="card-header pb-0">
 								<div class="d-flex justify-content-between">
-									<h4 class="card-title mg-b-0">جميع الفواتير  </h4>
+									<h4 class="card-title mg-b-0">{{trans('main_side.section')}}</h4>
 									<i class="mdi mdi-dots-horizontal text-gray"></i>
-								</div>
-								<p class="tx-12 tx-gray-500 mb-2">الشركه القابضه</p>
+								</div>	
 							</div>
-                            @can('اضافة قسم')
                             <div class="col-sm-6 col-md-4 col-xl-3">
-                                <a class="modal-effect btn btn-outline-primary btn-block" data-effect="effect-scale" data-toggle="modal" href="#modaldemo8">اضافه قسم</a>
+                                <a class="modal-effect btn btn-outline-primary btn-block" data-effect="effect-scale" data-toggle="modal" href="#modaldemo8">{{ trans('section.add_section')}}</a>
                             </div>
-                            @endcan
+                           
 							<div class="card-body">
 								<div class="table-responsive">
 									<table class="table text-md-nowrap" id="example1">
 										<thead>
 											<tr>
                                                 <th class="wd-5p border-bottom-0">#</th>
-												<th class="wd-15p border-bottom-0"> اسم القسم</th>
-												<th class="wd-15p border-bottom-0">الوصف </th>
-												<th class="wd-15p border-bottom-0">العمليات</th>
+												<th class="wd-15p border-bottom-0">{{ trans('section.name_section')}}</th>
+												<th class="wd-15p border-bottom-0">{{ trans('classrooms.classroom_name')}}</th>
+                                                <th class="wd-15p border-bottom-0">{{ trans('grade_list.grade_name')}}</th>
+												<th class="wd-15p border-bottom-0">{{ trans('grade_list.process') }}</th>
 
 
 											</tr>
@@ -101,34 +100,33 @@
 										<tbody>
 
 											 <?php $i = 0; ?>
-                                                   @foreach ($sections as $sec)
+                                              
                                                        <?php $i++; ?>
                                                      <tr>
                                                        <td>{{ $i }}</td>
-                                                        <td>{{ $sec->section_name }}</td>
-                                                        <td>{{ $sec->description }}</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
 
 
-                                                        @can('تعديل قسم')
 
 
                                                     <td><button class="btn btn-outline-success btn-sm"
-                                                        data-id="{{ $sec->id }}"  data-section_name="{{ $sec->section_name }}"
+                                                        data-id=""  data-section_name=""
                                                         href="#exampleModal2"
-                                                            data-description="{{ $sec->description }}" data-toggle="modal"
-                                                        data-target="#exampleModal2">تعديل</button>
-                                                    @endcan
-
-                                                    @can('حذف قسم')
+                                                            data-description="" data-toggle="modal"
+                                                        data-target="#exampleModal2">{{ trans('grade_list.edit') }}</button>
+                                                   
 
 
-                                                    <button class="btn btn-outline-danger btn-sm " data-id="{{ $sec->id }}"
-                                                        data-section_name="{{ $sec->section_name }}" data-toggle="modal"
-                                                        href="#modaldemo9">حذف</button>
-                                                    @endcan
+
+                                                    <button class="btn btn-outline-danger btn-sm " data-id=""
+                                                        data-section_name="" data-toggle="modal"
+                                                        href="#modaldemo9">{{ trans('grade_list.delete') }}</button>
+                                             
                                                     </td>
                                                      </tr>
-                                                     @endforeach
+                                                
 
 
 
@@ -147,7 +145,7 @@
                                 <h6 class="modal-title">اضافه قسم</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{ route('sections.store') }}" method="post" autocomplete="off">
+                                <form action="" method="post" autocomplete="off">
                                     {{ csrf_field() }}
 
                                     <div class="form-group">
@@ -192,7 +190,7 @@
                           </div>
                               <div class="modal-body">
 
-                                <form action="{{ route('sections.update') }}" method="post" autocomplete="off">
+                                <form action="" method="post" autocomplete="off">
                                   {{method_field('put')}}
                                   {{csrf_field()}}
                                   <div class="form-group">
@@ -234,7 +232,7 @@
                                                                                type="button"><span aria-hidden="true">&times;</span></button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{ route('sections.destroy') }}" method="post">
+                                <form action="" method="post">
                                     {{method_field('delete')}}
                                     {{csrf_field()}}
                                     <div class="modal-body">
