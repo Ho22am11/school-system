@@ -75,16 +75,31 @@ class SectionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $id =  $request->id;
+        $section = Section::findOrFail($id);
+        $section->update([
+            $section->name = ['en' => $request->name_en , 'ar' => $request->name],
+            $section->grade_id = $request->grade_id,
+            $section->classroom_id = $request->classrooms,
+
+
+        ]);
+        session()->flash('Add',trans('message.secces_edit'));
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request)
     {
-        //
+        $id =  $request->id;
+        $section = Section::findOrFail($id);
+        $section->delete();
+        session()->flash('Add',trans('message.secces_delete'));
+        return back();
+
     }
 }

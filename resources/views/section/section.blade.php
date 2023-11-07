@@ -113,20 +113,22 @@
 
 
                                                     <td><button class="btn btn-outline-success btn-sm"
-                                                        data-id=""  data-section_name=""
+                                                        data-id="{{ $section->id }}"  data-name="{{ $section->getTranslation('name', 'ar') }}"
+                                                        data-grade="{{ $section->grade->name }}" 
                                                         href="#exampleModal2"
-                                                            data-description="" data-toggle="modal"
+                                                            data-name_en="{{ $section->getTranslation('name', 'en') }}" data-toggle="modal"
                                                         data-target="#exampleModal2">{{ trans('grade_list.edit') }}</button>
                                                    
 
 
 
-                                                    <button class="btn btn-outline-danger btn-sm " data-id=""
-                                                        data-section_name="" data-toggle="modal"
+                                                    <button class="btn btn-outline-danger btn-sm " data-id="{{ $section->id }}"
+                                                        data-name="{{ $section->name }}" data-toggle="modal"
                                                         href="#modaldemo9">{{ trans('grade_list.delete') }}</button>
                                              
                                                     </td>
-                                                     </tr>
+                                               
+                                                    </tr>
                                             @endforeach
                                                 
 
@@ -194,43 +196,65 @@
 
                    <!-- edit -->
 
+               
+                                                     
+                    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                           <div class="modal-dialog" role="document">
+                                                                   <div class="modal-content">
+                             <div class="modal-header">
+                                 <h5 class="modal-title" id="exampleModalLabel">{{ trans('section.edit')}}</h5>
+                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                     <span aria-hidden="true">&times;</span>
+                                 </button>
+                             </div>
+                                 <div class="modal-body">
+
+                                   <form action="{{ route('section.update') }}" method="post" autocomplete="off">
+                                     {{method_field('put')}}
+                                     {{csrf_field()}}
+                                     <div class="form-group">
+                                         <input type="hidden" name="id" id="id" value="">
+                                         <label for="recipient-name" class="col-form-label"> الاسم بلعربي:</label>
+                                         <input class="form-control" name="name" id="name" type="text">
+                                     </div>
+                                     <div class="form-group">
+                                     
+                                       <label for="recipient-name" class="col-form-label"> enter the name in english:</label>
+                                       <input class="form-control" name="name_en" id="name_en" type="text">
+                                   </div>
+                                     <div class="col">
+                                       <label for="inputName" class="control-label">  </label>
+                                       <select name="grade_id" id="grade" class="form-control SlectBox"  onchange="console.log($(this).val())" >
+
+                                           <option value="" selected disabled> </option>
+                                           @foreach ($grades as $grade)
+                                           <option value="{{ $grade->id  }}">{{ $grade->name }}</option>
+                                           @endforeach
+                                          
+                                       </select>
+                                   </div>
+                                   <div class="col">
+                                       <label for="inputName" class="control-label">{{ trans('classrooms.classroom_name')}}</label>
+                                       <select id="classrooms" name="classrooms" class="form-control">
+                                       </select>
+                                   </div>
 
 
 
-                  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                   aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">تعديل القسم</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                              </button>
-                          </div>
-                              <div class="modal-body">
+                     <div class="modal-footer">
+                       <button type="submit" class="btn btn-primary">تاكيد</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
 
-                                <form action="" method="post" autocomplete="off">
-                                  {{method_field('put')}}
-                                  {{csrf_field()}}
-                                  <div class="form-group">
-                                      <input type="hidden" name="id" id="id" value="">
-                                      <label for="recipient-name" class="col-form-label">اسم القسم:</label>
-                                      <input class="form-control" name="section_name" id="section_name" type="text">
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="message-text" class="col-form-label">ملاحظات:</label>
-                                      <textarea class="form-control" id="description" name="description"></textarea>
-                                  </div>
+                     </div>
+                   </div>
+                   </form>
+                   </div>
+                   </div>
+               
 
-                                  <div class="modal-footer">
-                                   <button type="submit" class="btn btn-primary">تاكيد</button>
-                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
 
-                                  </div>
-                                  </div>
-                                </form>
-                              </div>
-                  </div>
+                  
 
                   <!-- end eidt -->
 
@@ -251,13 +275,13 @@
                                                                                type="button"><span aria-hidden="true">&times;</span></button>
                             </div>
                             <div class="modal-body">
-                                <form action="" method="post">
+                                <form action="{{ route('section.delete')}}" method="post">
                                     {{method_field('delete')}}
                                     {{csrf_field()}}
                                     <div class="modal-body">
                                         <p>هل انت متاكد من عملية الحذف ؟</p><br>
                                         <input type="hidden" name="id" id="id" value="">
-                                        <input class="form-control" name="section_name" id="section_name" type="text" readonly>
+                                        <input class="form-control" name="name" id="name" type="text" readonly>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">الغاء</button>
@@ -326,12 +350,17 @@
     $('#exampleModal2').on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget)
         var id = button.data('id')
-        var section_name = button.data('section_name')
-        var description = button.data('description')
+        var name = button.data('name')
+        var name_en = button.data('name_en')
+
+
+
         var modal = $(this)
         modal.find('.modal-body #id').val(id);
-        modal.find('.modal-body #section_name').val(section_name);
-        modal.find('.modal-body #description').val(description);
+        modal.find('.modal-body #name').val(name);
+        modal.find('.modal-body #name_en').val(name_en);
+
+
     })
 </script>
 <script>
@@ -339,10 +368,10 @@
     $('#modaldemo9').on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget)
         var id = button.data('id')
-        var section_name = button.data('section_name')
+        var name = button.data('name')
         var modal = $(this)
         modal.find('.modal-body #id').val(id);
-        modal.find('.modal-body #section_name').val(section_name);
+        modal.find('.modal-body #name').val(name);
     })
 </script>
 @endsection

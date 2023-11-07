@@ -42,6 +42,8 @@ Route::group(
         Route::resource('/classroom',ClassroomController::class);
         Route::post('select_grade',[ClassroomController::class , 'select'])->name('select');
         Route::resource('/section', SectionController::class);
+        Route::post('/section/up',[SectionController::class , 'update'])->name('section.update');
+        Route::post('/section/delete',[SectionController::class , 'destroy'])->name('section.delete');
         
 
     });
