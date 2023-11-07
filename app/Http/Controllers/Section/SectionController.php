@@ -19,7 +19,8 @@ class SectionController extends Controller
     public function index()
     {
         $grades = Grade::all();
-        return view('section.section', compact('grades'));
+        $sections = Section::all();
+        return view('section.section', compact('grades' , 'sections'));
     }
 
     /**

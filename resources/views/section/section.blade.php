@@ -100,13 +100,14 @@
 										<tbody>
 
 											 <?php $i = 0; ?>
+                                             @foreach ($sections as $section)
                                               
                                                        <?php $i++; ?>
                                                      <tr>
                                                        <td>{{ $i }}</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
+                                                        <td>{{ $section->name}}</td>
+                                                        <td>{{ $section->classroom->name}}</td>
+                                                        <td>{{ $section->grade->name}}</td>
 
 
 
@@ -126,6 +127,7 @@
                                              
                                                     </td>
                                                      </tr>
+                                            @endforeach
                                                 
 
 

@@ -17,4 +17,10 @@ class Section extends Model
         'classroom_id',
         'status',
     ];
+    public function grade(){
+        return $this->belongsTo(Grade::class);
+    }
+    public function classroom(){
+        return $this->belongsTo(Classroom::class);
+    }
 }
