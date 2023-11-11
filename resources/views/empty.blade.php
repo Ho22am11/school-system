@@ -3,6 +3,7 @@
  فارغ
 @stop
 @section('css')
+@livewireStyles
 @endsection
 @section('page-header')
 				<!-- breadcrumb -->
@@ -43,6 +44,7 @@
 @section('content')
 				<!-- row -->
 				<div class="row">
+					<livewire:counter /> 
 
 				</div>
 				<!-- row closed -->
@@ -52,4 +54,5 @@
 		<!-- main-content closed -->
 @endsection
 @section('js')
+@livewireScripts
 @endsection
