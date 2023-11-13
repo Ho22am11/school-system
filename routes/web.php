@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Grade\GradeController;
 use App\Http\Controllers\Classroom\ClassroomController;
 use App\Http\Controllers\Section\SectionController;
+use App\Http\Controllers\Parent\ParentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,8 +43,11 @@ Route::group(
         Route::resource('/classroom',ClassroomController::class);
         Route::post('select_grade',[ClassroomController::class , 'select'])->name('select');
         Route::resource('/section', SectionController::class);
+        Route::resource('/parent' ,ParentController::class);
         Route::post('/section/up',[SectionController::class , 'update'])->name('section.update');
         Route::post('/section/delete',[SectionController::class , 'destroy'])->name('section.delete');
+        Route::view('/show_form', 'livewire.show_form');
+
         
 
     });
