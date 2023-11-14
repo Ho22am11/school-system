@@ -81,10 +81,10 @@
 						<a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><i class="fas fa-user-tie">  {{trans('main_side.parent')}}</i></a>
 						<ul class="slide-menu">
                             
-							<li><a class="slide-item" href="{{ url('/' . $page='parent') }}">{{trans('main_side.parent_add')}}</a></li>
+							<li><a class="slide-item" href="{{ url('/' . $page='show_form') }}">{{trans('main_side.parent_add')}}</a></li>
                      
                           
-							<li><a class="slide-item" href="{{ url('/' . $page='parent') }}">{{trans('main_side.parent_list')}}</a></li>
+							<li><a class="slide-item" href="{{ url('/' . $page='show_form') }}">{{trans('main_side.parent_list')}}</a></li>
                        
 
 						</ul>

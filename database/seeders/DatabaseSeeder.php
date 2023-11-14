@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CreateAdminUserSeeder::class);
         $this->call(NationalitieSeeder::class);
         $this->call(ReligionSeeder::class);
+        $this->call(StatusSeeder::class);
         
 
     }
