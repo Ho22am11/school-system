@@ -8,7 +8,7 @@
 <script src="{{URL::asset('assets/plugins/ionicons/ionicons.js')}}"></script>
 <!-- Moment js -->
 <script src="{{URL::asset('assets/plugins/moment/moment.js')}}"></script>
-
+<livewire:scripts />
 <!-- Rating js-->
 <script src="{{URL::asset('assets/plugins/rating/jquery.rating-stars.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/rating/jquery.barrating.js')}}"></script>
