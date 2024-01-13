@@ -61,7 +61,7 @@
                  
 
 
-                    @can('التقارير')
+              
 					<li class="side-item side-item-category">{{trans('main_side.section')}}</li>
 
 					<li class="slide">
@@ -74,7 +74,7 @@
 
 						</ul>
 					</li>
-                    @endcan
+            
 
 
           
@@ -88,6 +88,21 @@
                      
                           
 							<li><a class="slide-item" href="{{ url('/' . $page='roles') }}">صلاحيات المستخدمين </a></li>
+                       
+
+						</ul>
+					</li>
+					<li class="side-item side-item-category">{{trans('main_side.parent')}}</li>
+
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><i class="fas fa-user-tie">  {{trans('main_side.parent')}}</i></a>
+					
+						<ul class="slide-menu">
+                            
+							<li><a class="slide-item" href="{{ url('/show_form') }}">{{trans('main_side.parent_add')}}</a></li>
+                     
+                          
+							<li><a class="slide-item" href="{{ url('/' . $page='roles') }}">{{trans('main_side.parent_list')}}</a></li>
                        
 
 						</ul>

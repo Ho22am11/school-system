@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Grade\GradeController;
 use App\Http\Controllers\Classroom\ClassroomController;
 use App\Http\Controllers\Section\SectionController;
+use Livewire\Livewire;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,6 +45,13 @@ Route::group(
         Route::resource('/section', SectionController::class);
         Route::post('/section/up',[SectionController::class , 'update'])->name('section.update');
         Route::post('/section/delete',[SectionController::class , 'destroy'])->name('section.delete');
+        livewire::setUpdateRoute(function ($handle){
+            return Route::post('/livewwire/update' , $handle);
+
+        });
+        
+        Route::view('/show_form', 'livewire.show_form');
+        
         
 
     });

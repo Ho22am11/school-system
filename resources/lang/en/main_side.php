@@ -10,5 +10,8 @@ return [
     "classrooms_list" => "Classrooms List",
     "section" => "Sections" ,
     "section_list" => "Sections List",
+    "parent" => " Parent ",
+    "parent_add" => "Add Parent ",
+    "parent_list" => " Parent List",
 
 ];
