@@ -22,7 +22,7 @@
         
     </div>
 
-       
+    @include('livewire.confrom_form')
     @include('livewire.Mother_Form')
 
     
