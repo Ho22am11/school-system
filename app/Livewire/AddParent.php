@@ -16,7 +16,7 @@ class AddParent extends Component
     $National_ID_Father, $Passport_ID_Father,
     $Phone_Father, $Job_Father, $Job_Father_en,
     $Nationality_Father_id, $Blood_Type_Father_id,
-    $Address_Father, $Religion_Father_id,
+    $Address_Father, $Religion_Father_id, $status_father,
     $updateMode,
 
     // Mother_INPUTS
@@ -24,7 +24,7 @@ class AddParent extends Component
     $National_ID_Mother, $Passport_ID_Mother,
     $Phone_Mother, $Job_Mother, $Job_Mother_en,
     $Nationality_Mother_id, $Blood_Type_Mother_id,
-    $Address_Mother, $Religion_Mother_id;
+    $Address_Mother, $status_Mother ,$Religion_Mother_id;
 
     public function render()
     {
@@ -34,9 +34,15 @@ class AddParent extends Component
             "statuses" => status::all(),
         ]);
     }
-    public function firstStepSubmit()
+  
+    public function firstStepSubmit($step)
     {
-        $this->currentStep = 2;
+        $this->currentStep = $step;
+    }
+
+    public function back($step)
+    {
+        $this->currentStep = $step ;
     }
     
 }

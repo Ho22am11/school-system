@@ -1,3 +1,4 @@
+
 @if($currentStep != 1)
 <div style="display: none" class="row setup-content" id="step-1">
 @endif
@@ -129,6 +130,6 @@
      
 </div>
 
-<button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="firstStepSubmit" type="button">{{trans('parent.Next')}}
+<button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="firstStepSubmit(2)" type="button">{{trans('parent.Next')}}
 </button>
 </div>

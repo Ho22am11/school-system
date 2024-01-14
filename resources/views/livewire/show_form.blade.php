@@ -25,6 +25,7 @@
                             <div class="card-body">
                                 <livewire:add-parent />
 								
+								
                             </div>
                         </div>
                     </div>

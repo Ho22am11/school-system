@@ -20,6 +20,18 @@ return[
    'Address_Father' => 'عنوان الاب',
    'status_father' => "حاله الاب" ,
 
+
+     //معلومات الام
+     'Name_Mother' => 'اسم الام باللغة العربية',
+     'Name_Mother_en' => 'اسم الام  باللغة الانجليزية',
+     'Job_Mother' => 'اسم الوظيفة باللغة العربية',
+     'Job_Mother_en' => 'اسم الوظيفة باللغة الانجليزية',
+     'National_ID_Mother' => 'رقم الهوية',
+     'Passport_ID_Mother' => 'رقم جواز السفر',
+     'Phone_Mother' => 'رقم الهاتف',
+     'Address_Mother' => 'عنوان الام',
+     'status_mother' => 'حاله الام' ,
+
    'Next' => 'التالي',
    'Back' => 'السابق',
    'Finish' => 'تاكيد',

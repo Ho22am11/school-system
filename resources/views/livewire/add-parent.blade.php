@@ -1,4 +1,5 @@
 <div>
+    
     <div class="stepwizard">
         <div class="stepwizard-row setup-panel">
             <div class="stepwizard-step">
@@ -18,6 +19,16 @@
                 <p>{{ trans('parent.Step3') }}</p>
             </div>
         </div>
+        
     </div>
-    @include('livewire.form_father')
+
+       
+    @include('livewire.Mother_Form')
+
+    
+    @include('livewire.Father_Form') 
+
+
+
+
 </div>
