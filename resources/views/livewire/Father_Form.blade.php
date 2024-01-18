@@ -3,10 +3,16 @@
 <div style="display: none" class="row setup-content" id="step-1">
 @endif
 <div class="col-xs-12">
-<div class="col-md-12">
+<div class="col-md-12" wire:poll.2000ms >
          <br>
-         <div class="form-row">
-              
+         <div class="form-row"  >
+            <div class="col" >
+                <label for="title">{{trans('Parent.Email')}}</label>
+                <input type="email" wire:model="Email"  class="form-control">
+                @error('Email')
+                 <div class="alert alert-danger">{{ $message }}</div>
+                 @enderror
+            </div>
              <div class="col">
                  <label for="title">{{trans('parent.Password')}}</label>
                  <input type="password" wire:model="Password" class="form-control" >
@@ -19,8 +25,8 @@
          <div class="form-row">
              <div class="col">
                  <label for="title">{{trans('parent.Name_Father')}}</label>
-                 <input type="text" wire:model="Name_Father" class="form-control" >
-                 @error('Name_Father')
+                 <input type="text" wire:model="name" class="form-control" >
+                 @error('name')
                  <div class="alert alert-danger">{{ $message }}</div>
                  @enderror
              </div>
