@@ -27,9 +27,10 @@ class AddParent extends Component
     $Nationality_Mother_id, $Blood_Type_Mother_id,
     $Address_Mother, $status_Mother ,$Religion_Mother_id;
 
-    public function updated($field)
+
+    public function updated($propertyName)
     {
-        $this->validate([
+        $this->validateOnly($propertyName, [
             'Email' => 'email' ,
             'Password' => 'min:8 | max:15',
             'National_ID_Father' => ' min:10 | max:10' ,
@@ -40,8 +41,7 @@ class AddParent extends Component
 
         ]);
     }
-
-
+    
     public function render()
     {
         return view('livewire.add-parent', [
