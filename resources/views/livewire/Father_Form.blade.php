@@ -25,8 +25,8 @@
          <div class="form-row">
              <div class="col">
                  <label for="title">{{trans('parent.Name_Father')}}</label>
-                 <input type="text" wire:model="name" class="form-control" >
-                 @error('name')
+                 <input type="text" wire:model="Name_Father" class="form-control" >
+                 @error('Name_Father')
                  <div class="alert alert-danger">{{ $message }}</div>
                  @enderror
              </div>

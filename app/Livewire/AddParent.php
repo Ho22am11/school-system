@@ -21,7 +21,7 @@ class AddParent extends Component
     $updateMode,
 
     // Mother_INPUTS
-    $Name_Mother, $Name_Mother_en, 
+    $Name_Mother, $Name_Mother_en, $id , 
     $National_ID_Mother, $Passport_ID_Mother,
     $Phone_Mother, $Job_Mother, $Job_Mother_en,
     $Nationality_Mother_id, $Blood_Type_Mother_id,
@@ -41,10 +41,6 @@ class AddParent extends Component
         ]);
     }
 
-    protected $messages = [
-        'Email.email' => 'The Email Address format is not valid.',
-        
-    ];
 
     public function render()
     {
@@ -55,9 +51,37 @@ class AddParent extends Component
         ]);
     }
   
-    public function firstStepSubmit($step)
+    public function firstStepSubmit()
     {
-        $this->currentStep = $step;
+        $this->validate([
+            'Email' => 'required',
+            'Password' => 'required',
+            'National_ID_Father' => 'required' ,
+            'Phone_Father' => 'required',
+            'Nationality_Father_id' => 'required',
+            'Religion_Father_id' => 'required',
+            'Address_Father' => 'required',
+        ]);
+
+        $this->currentStep = 2;
+    }
+
+    public function secundStepSubmit(){
+        $this->validate([
+                'Name_Mother' => 'required',
+                'Name_Mother_en' => 'required',
+                'National_ID_Mother' => 'required',
+                'Phone_Mother' => 'required',
+                'Job_Mother' => 'required',
+                'Job_Mother_en' => 'required',
+                'Nationality_Mother_id' => 'required',
+                'Religion_Mother_id' => 'required',
+                'Address_Mother' => 'required',
+        
+
+        ]);
+
+        $this->currentStep = 3;
     }
 
     public function back($step)

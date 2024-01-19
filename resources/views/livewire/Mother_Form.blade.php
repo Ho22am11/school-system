@@ -108,7 +108,7 @@
 
          <div class="form-group">
              <label for="exampleFormControlTextarea1">{{trans('parent.Address_Mother')}}</label>
-             <textarea class="form-control" wire:model="Address_Father" id="exampleFormControlTextarea1" rows="4"></textarea>
+             <textarea class="form-control" wire:model="Address_Mother" id="exampleFormControlTextarea1" rows="4"></textarea>
              @error('Address_Mother')
              <div class="alert alert-danger">{{ $message }}</div>
              @enderror
@@ -125,6 +125,6 @@
 <button class="btn btn-danger btn-sm nextBtn btn-lg pull-right" type="button" wire:click="back(1)">
     {{trans('Parent.Back')}}
 </button>
-<button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="firstStepSubmit(3)" type="button">{{trans('parent.Next')}} </button>
+<button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="secundStepSubmit(3)" type="button">{{trans('parent.Next')}} </button>
 </div>
 </div>
