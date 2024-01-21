@@ -1,5 +1,6 @@
 <?php 
 return[
+    'success' => 'تم اضافه بيانات الوالدين' ,
     'secces_grade' => 'تم اضافه المرحله بنجاح' ,
     'secces_edit' => 'تم التعديل بنجاح',
     'secces_delete' => 'تم الحذف بنجاح',

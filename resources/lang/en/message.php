@@ -1,6 +1,8 @@
 <?php 
 return[
 
+    'success' => ' add perant seccessful' ,
+
     'secces_grade' => 'seccesd add grade',
     'secces_edit' => 'seccesd edit' ,
     'secces_delete' => 'seccesd delete' ,
