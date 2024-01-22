@@ -56,7 +56,6 @@ class AddParent extends Component
     public function firstStepSubmit()
     {
         $this->validate([
-            'Email' => 'required',
             'Password' => 'required',
             'National_ID_Father' => 'required' ,
             'Phone_Father' => 'required',
@@ -89,6 +88,7 @@ class AddParent extends Component
     public function submitForm(){
         $My_Parent = new My_Parent ;
         // Father_INPUTS
+        
         $My_Parent->Email = $this->Email;
         $My_Parent->Password = Hash::make($this->Password);
         $My_Parent->Name_Father = ['en' => $this->Name_Father_en, 'ar' => $this->Name_Father];
@@ -115,34 +115,36 @@ class AddParent extends Component
 
        $this->successMessage = trans('message.success');
 
-       $this->clearform();
+       $this->clearForm();
 
     }
     public function clearForm()
     {
-        $this->Email = '';
         $this->Password = '';
         $this->Name_Father = '';
         $this->Job_Father = '';
         $this->Job_Father_en = '';
         $this->Name_Father_en = '';
-        $this->National_ID_Father ='';
-        $this->status_father = '';
+        $this->Nationality_Father_id = 64 ;
+        $this->National_ID_Father = '' ;
+        $this->Religion_Father_id = 1;
+        $this->status_father = 1 ;
         $this->Phone_Father = '';
-        $this->Nationality_Father_id = '';
         $this->Address_Father ='';
-        $this->Religion_Father_id ='';
 
         $this->Name_Mother = '';
         $this->Job_Mother = '';
         $this->Job_Mother_en = '';
         $this->Name_Mother_en = '';
-        $this->National_ID_Mother ='';
-        $this->status_Mother = '';
         $this->Phone_Mother = '';
-        $this->Nationality_Mother_id = '';
         $this->Address_Mother ='';
-        $this->Religion_Mother_id ='';
+        $this->National_ID_Mother = '' ;
+        $this->Nationality_Mother_id = 64 ;
+        $this->Religion_Mother_id = 1;
+        $this->status_Mother = 1 ;
+        
+        $this->currentStep = 1 ;
+        $this->successMessage = '' ;
 
     }
 
