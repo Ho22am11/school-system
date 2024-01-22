@@ -4,6 +4,14 @@
        @endif
 
 
+       @if ($catchError)
+            <div class="alert alert-danger" id="success-danger">
+                <button type="button" class="close" data-dismiss="alert">x</button>
+                {{ $catchError }}
+            </div>
+        @endif
+
+
        <div class="col-xs-12">
            <div class="col-md-12"><br>
                <label style="color: red"><<h3>{{trans('Parent.Attachments')}}</h3></label>

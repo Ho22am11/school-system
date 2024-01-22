@@ -3,13 +3,14 @@
 <div style="display: none" class="row setup-content" id="step-1">
 @endif
 <div class="col-xs-12">
-<div class="col-md-12" wire:poll.2000ms >
-    @if (!empty($successMessage))
+    @if ($successMessage)
     <div class="alert alert-success" id="success-alert">
         <button type="button" class="close" data-dismiss="alert">x</button>
         {{ $successMessage }}
     </div>
     @endif
+<div class="col-md-12" wire:poll.2000ms >
+   
          <br>
          <div class="form-row"  >
             <div class="col" >

@@ -27,7 +27,8 @@ class AddParent extends Component
     $Name_Mother, $Name_Mother_en, $id , 
     $National_ID_Mother, $Phone_Mother, $Job_Mother, $Job_Mother_en,
     $Nationality_Mother_id, 
-    $Address_Mother, $status_Mother ,$Religion_Mother_id;
+    $Address_Mother, $status_Mother ,$Religion_Mother_id,
+    $catchError;
 
 
     public function updated($propertyName)
@@ -86,40 +87,46 @@ class AddParent extends Component
     }
 
     public function submitForm(){
-        $My_Parent = new My_Parent ;
-        // Father_INPUTS
-        
-        $My_Parent->Email = $this->Email;
-        $My_Parent->Password = Hash::make($this->Password);
-        $My_Parent->Name_Father = ['en' => $this->Name_Father_en, 'ar' => $this->Name_Father];
-        $My_Parent->National_ID_Father = $this->National_ID_Father;
-        $My_Parent->status_father_id = $this->status_father;
-        $My_Parent->Phone_Father = $this->Phone_Father;
-        $My_Parent->Job_Father = ['en' => $this->Job_Father_en, 'ar' => $this->Job_Father];
-        $My_Parent->Nationality_Father_id = $this->Nationality_Father_id;
-        $My_Parent->Religion_Father_id = $this->Religion_Father_id;
-        $My_Parent->Address_Father = $this->Address_Father;
 
-        // Mother_INPUTS
-        $My_Parent->Name_Mother = ['en' => $this->Name_Mother_en, 'ar' => $this->Name_Mother];
-        $My_Parent->National_ID_Mother = $this->National_ID_Mother;
-        $My_Parent->status_Mother_id = $this->status_Mother;
-        $My_Parent->Phone_Mother = $this->Phone_Mother;
-        $My_Parent->Job_Mother = ['en' => $this->Job_Mother_en, 'ar' => $this->Job_Mother];
-        $My_Parent->Nationality_Mother_id = $this->Nationality_Mother_id;
-        $My_Parent->Religion_Mother_id = $this->Religion_Mother_id;
-        $My_Parent->Address_Mother = $this->Address_Mother;
+        try {
+            $My_Parent = new My_Parent ;
+            // Father_INPUTS
+            
+            $My_Parent->Email = $this->Email;
+            $My_Parent->Password = Hash::make($this->Password);
+            $My_Parent->Name_Father = ['en' => $this->Name_Father_en, 'ar' => $this->Name_Father];
+            $My_Parent->National_ID_Father = $this->National_ID_Father;
+            $My_Parent->status_father_id = $this->status_father;
+            $My_Parent->Phone_Father = $this->Phone_Father;
+            $My_Parent->Job_Father = ['en' => $this->Job_Father_en, 'ar' => $this->Job_Father];
+            $My_Parent->Nationality_Father_id = $this->Nationality_Father_id;
+            $My_Parent->Religion_Father_id = $this->Religion_Father_id;
+            $My_Parent->Address_Father = $this->Address_Father;
+    
+            // Mother_INPUTS
+            $My_Parent->Name_Mother = ['en' => $this->Name_Mother_en, 'ar' => $this->Name_Mother];
+            $My_Parent->National_ID_Mother = $this->National_ID_Mother;
+            $My_Parent->status_Mother_id = $this->status_Mother;
+            $My_Parent->Phone_Mother = $this->Phone_Mother;
+            $My_Parent->Job_Mother = ['en' => $this->Job_Mother_en, 'ar' => $this->Job_Mother];
+            $My_Parent->Nationality_Mother_id = $this->Nationality_Mother_id;
+            $My_Parent->Religion_Mother_id = $this->Religion_Mother_id;
+            $My_Parent->Address_Mother = $this->Address_Mother;
+    
+            $My_Parent->save();
+           $this->successMessage = trans('message.success');
+           $this->clearForm();
 
-        $My_Parent->save();
-
-
-       $this->successMessage = trans('message.success');
-
-       $this->clearForm();
+        }
+        catch(\Exception $e){
+            $this->catchError = $e->getMessage() ;
+        }
+       
 
     }
     public function clearForm()
     {
+        $this->Email = '' ;
         $this->Password = '';
         $this->Name_Father = '';
         $this->Job_Father = '';
@@ -144,7 +151,7 @@ class AddParent extends Component
         $this->status_Mother = 1 ;
         
         $this->currentStep = 1 ;
-        $this->successMessage = '' ;
+   
 
     }
 
