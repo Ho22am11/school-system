@@ -37,6 +37,13 @@ return [
         ],
 
 
+        'parent_attechment' => [
+            'driver' => 'local',
+            'root' => storage_path('app/parent_attechment'),
+            'throw' => false,
+        ],
+
+
 
     'public_uploads' => [
 

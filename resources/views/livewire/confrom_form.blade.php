@@ -14,7 +14,7 @@
 
        <div class="col-xs-12">
            <div class="col-md-12"><br>
-               <label style="color: red"><<h3>{{trans('Parent.Attachments')}}</h3></label>
+               <label style="color: red"><h3>{{trans('Parent.Attachments')}}</h3></label>
                <div class="form-group">
                    <input type="file" wire:model="photos" accept="image/*" multiple>
                </div>

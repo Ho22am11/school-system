@@ -7,10 +7,14 @@ use App\Models\Nationalitie;
 use App\Models\Religion;
 use App\Models\status;
 use App\Models\My_Parent;
+use App\Models\ParentAttechment;
 use Illuminate\Support\Facades\Hash;
+use Livewire\Features\SupportFileUploads\WithFileUploads;
 
 class AddParent extends Component
 {
+    use WithFileUploads ;
+
     public $successMessage ='';
     public $currentStep = 1,
 
@@ -28,7 +32,10 @@ class AddParent extends Component
     $National_ID_Mother, $Phone_Mother, $Job_Mother, $Job_Mother_en,
     $Nationality_Mother_id, 
     $Address_Mother, $status_Mother ,$Religion_Mother_id,
-    $catchError;
+    $catchError,
+
+    // confrom form
+    $Parent_id , $name_file , $photos = [] ; 
 
 
     public function updated($propertyName)
@@ -114,6 +121,17 @@ class AddParent extends Component
             $My_Parent->Address_Mother = $this->Address_Mother;
     
             $My_Parent->save();
+
+            if (!empty($this->photos)){
+                foreach($this->photos as $photo){
+                     $photo->storeAs($this->National_ID_Father , $photo->getClientOriginalName() , $disk ='parent_attechment');
+                ParentAttechment::create([
+                        'name_file' => $photo->getClientOriginalName() ,
+                        'Parent_id' => My_Parent::latest()->first()->id,
+
+                     ]);
+                }
+            }
            $this->successMessage = trans('message.success');
            $this->clearForm();
 
