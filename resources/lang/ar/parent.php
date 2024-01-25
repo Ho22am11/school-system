@@ -39,7 +39,10 @@ return[
    'Attachments' => 'المرفقات',
    'Processes' => 'العمليات',
    
-
+// table 
+   'name_father' => 'اسم الاب' ,
+   'name_mother' => 'اسم الام' ,
+   
 
 
 ];

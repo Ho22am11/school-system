@@ -45,4 +45,8 @@ return[
     'Address_Mother' => 'Address Mother',
     'status_mother' => 'Status Mother' ,
 
+    // table 
+   'name_father' => 'Father Name' ,
+   'name_mother' => 'Mother name' ,
+    
 ];

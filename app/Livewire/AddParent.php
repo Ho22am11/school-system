@@ -16,7 +16,7 @@ class AddParent extends Component
     use WithFileUploads ;
 
     public $successMessage ='';
-    public $currentStep = 1,
+    public $currentStep = 1 , $show_table = true ,
 
     // Father_INPUTS
     $Email, $Password,
@@ -57,7 +57,8 @@ class AddParent extends Component
         return view('livewire.add-parent', [
             'Nationalities' => Nationalitie::all(),
             'Religions' =>  Religion::all(),
-            "statuses" => status::all(),
+            'statuses' => status::all(),
+            'parents' => My_Parent::all(),
         ]);
     }
   
@@ -178,4 +179,11 @@ class AddParent extends Component
         $this->currentStep = $step ;
     }
     
+    public function showform(){
+        $this->show_table = false ;
+    }
+
+    public function back_to_list(){
+        $this->show_table = true ;
+    }
 }

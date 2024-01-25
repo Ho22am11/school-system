@@ -3,6 +3,7 @@
 <div style="display: none" class="row setup-content" id="step-1">
 @endif
 <div class="col-xs-12">
+    
     @if ($successMessage)
     <div class="alert alert-success" id="success-alert">
         <button type="button" class="close" data-dismiss="alert">x</button>
