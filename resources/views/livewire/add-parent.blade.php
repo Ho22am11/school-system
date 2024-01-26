@@ -4,6 +4,7 @@
         
         
     @else
+    <div>
     <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="button" wire:click="back_to_list">{{trans('Parent.add_parent')}}</button>
     <div class="stepwizard">
         <div class="stepwizard-row setup-panel">
@@ -33,7 +34,7 @@
     
     @include('livewire.Father_Form') 
 
-
+</div>
   @endif
 
 </div>

@@ -13,7 +13,8 @@
                 <th class="wd-15p border-bottom-0">{{ trans('parent.Phone_Father')}}</th>
                 <th class="wd-15p border-bottom-0">{{ trans('parent.Address_Father')}}</th>
                 <th class="wd-15p border-bottom-0">{{ trans('parent.status_father')}}</th>
-                <th class="wd-15p border-bottom-0">{{ trans('parent.status_mother')}}</th>
+                <th class="wd-20p border-bottom-0">{{ trans('parent.status_mother')}}</th>
+                <th></th>
 
             </tr>
         </thead>
@@ -32,6 +33,12 @@
                 <td>{{ $parent->Address_Father }}</td>
                 <td>{{ $parent->status_father_id}}</td>
                 <td>{{ $parent->status_Mother_id}}</td>
+                <td> 
+                    <button wire:click="edit({{ $parent->id }})" title="{{ trans('Grades_trans.Edit') }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger btn-sm" wire:click="delete({{ $parent->id }})" title="{{ trans('Grades_trans.Delete') }}"><i class="fa fa-trash"></i></button>
+                </td>
                 
 
             </tr>
