@@ -122,9 +122,20 @@
 
      
 </div>
+
+@if ($updateMode)
+<button class="btn btn-danger btn-sm nextBtn btn-lg pull-right" type="button" wire:click="back(1)">
+    {{trans('Parent.Back')}}
+</button>
+<button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="fininshUpdata" type="button">{{trans('parent.Next')}}</button>
+@else
 <button class="btn btn-danger btn-sm nextBtn btn-lg pull-right" type="button" wire:click="back(1)">
     {{trans('Parent.Back')}}
 </button>
 <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="secundStepSubmit(3)" type="button">{{trans('parent.Next')}} </button>
+@endif
+
+
+
 </div>
 </div>

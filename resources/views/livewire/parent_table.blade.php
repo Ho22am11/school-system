@@ -1,8 +1,14 @@
 <div class="table-responsive">
-
-    <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="button" wire:click="showform">
-    {{trans('Parent.add_parent')}}
+    @if (session()->has('Add'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>{{ session()->get('Add') }}</strong>
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">&times;</span>
 </button>
+</div>
+@endif
+    <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="button" wire:click="showform">{{trans('Parent.add_parent')}}</button>
+
     <table class="table text-md-nowrap" id="example1" data-page-length="50">
         <thead>
             <tr>

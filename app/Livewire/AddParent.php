@@ -16,7 +16,7 @@ class AddParent extends Component
     use WithFileUploads ;
 
     public $successMessage ='';
-    public $currentStep = 1 , $show_table = true ,
+    public $currentStep = 1 , $show_table = true , $updateMode = false , 
 
     // Father_INPUTS
     $Email, $Password,
@@ -25,14 +25,14 @@ class AddParent extends Component
     $Phone_Father, $Job_Father, $Job_Father_en,
     $Nationality_Father_id, 
     $Address_Father, $Religion_Father_id, $status_father,
-    $updateMode,
+    
 
     // Mother_INPUTS
     $Name_Mother, $Name_Mother_en, $id , 
     $National_ID_Mother, $Phone_Mother, $Job_Mother, $Job_Mother_en,
     $Nationality_Mother_id, 
     $Address_Mother, $status_Mother ,$Religion_Mother_id,
-    $catchError,
+    $catchError, $successMessageUpdate ,
 
     // confrom form
     $Parent_id , $name_file , $photos = [] ; 
@@ -172,6 +172,74 @@ class AddParent extends Component
         $this->currentStep = 1 ;
    
 
+    }
+
+    public function edit($id){
+        $this->updateMode = true ;
+        $this->show_table = false ;
+        $My_Parent = My_Parent::where('id',$id)->first();
+        $this->Parent_id = $id;
+        $this->Email = $My_Parent->Email;
+        $this->Password = $My_Parent->Password;
+        $this->Name_Father = $My_Parent->getTranslation('Name_Father', 'ar');
+        $this->Name_Father_en = $My_Parent->getTranslation('Name_Father', 'en');
+        $this->Job_Father = $My_Parent->getTranslation('Job_Father', 'ar');;
+        $this->Job_Father_en = $My_Parent->getTranslation('Job_Father', 'en');
+        $this->National_ID_Father =$My_Parent->National_ID_Father;
+        $this->Phone_Father = $My_Parent->Phone_Father;
+        $this->Nationality_Father_id = $My_Parent->nationality_Father_id;
+        $this->Address_Father =$My_Parent->Address_Father;
+        $this->Religion_Father_id = $My_Parent->Religion_Father_id;
+        $this->status_father = $My_Parent->status_father_id;
+
+
+        $this->Name_Mother = $My_Parent->getTranslation('Name_Mother', 'ar');
+        $this->Name_Mother_en = $My_Parent->getTranslation('Name_Father', 'en');
+        $this->Job_Mother = $My_Parent->getTranslation('Job_Mother', 'ar');;
+        $this->Job_Mother_en = $My_Parent->getTranslation('Job_Mother', 'en');
+        $this->National_ID_Mother =$My_Parent->National_ID_Mother;
+        $this->Phone_Mother = $My_Parent->Phone_Mother;
+        $this->Nationality_Mother_id = $My_Parent->nationality_Mother_id;
+        $this->Address_Mother =$My_Parent->Address_Mother;
+        $this->Religion_Mother_id =$My_Parent->Religion_Mother_id;
+        $this->status_Mother = $My_Parent->status_Mother_id;
+
+    }
+
+    public function nextupdata(){
+        $this->currentStep = 2 ;
+
+    }
+
+    public function fininshUpdata(){
+        $this->currentStep = 3 ;
+
+
+    }
+
+    public function submitForm_edit(){
+        if($this->Parent_id){
+            $parent = My_Parent::find($this->Parent_id );
+            $parent->update([
+
+                
+                'Email' => $this->Email ,
+                'Password' => $this->Password,
+                'Name_Father' => ['ar' => $this->Name_Father , 'en' => $this->Name_Father_en ],
+                'Job_Father' => ['ar'=>$this->Job_Father , 'en' =>$this->Job_Father_en],
+                'National_ID_Father' => $this->National_ID_Father ,
+                'Phone_Father' => $this->Phone_Father,
+                'Address_Father' => $this->Address_Father,
+                'nationality_Father_id' => $this->Nationality_Father_id ,
+                'Religion_Father_id' => $this->Religion_Father_id ,
+                'status_father_id' =>  $this->status_father,
+
+            ]);
+            session()->flash('Add', trans('message.secces_edit'));
+            return redirect()->to('show_form');
+            session()->flash('Add', trans('message.secces_edit'));
+        }
+       
     }
 
     public function back($step)
