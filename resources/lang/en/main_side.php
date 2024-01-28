@@ -13,5 +13,6 @@ return [
     "parent" => " Parent ",
     "parent_add" => "Add Parent ",
     "parent_list" => " Parent List",
+    "teacher" => "Teacher",
 
 ];

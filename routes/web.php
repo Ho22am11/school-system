@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Grade\GradeController;
 use App\Http\Controllers\Classroom\ClassroomController;
 use App\Http\Controllers\Section\SectionController;
+use App\Http\Controllers\TeacherController ;
 use Livewire\Livewire;
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +52,7 @@ Route::group(
         });
         
         Route::view('/show_form', 'livewire.show_form');
+        Route::resource('/teacher' , TeacherController::class);
         
         
 

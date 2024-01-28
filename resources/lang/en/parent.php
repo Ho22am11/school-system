@@ -48,5 +48,5 @@ return[
     // table 
    'name_father' => 'Father Name' ,
    'name_mother' => 'Mother name' ,
-    
+    'show_table' => 'Show Parent LIst' ,
 ];

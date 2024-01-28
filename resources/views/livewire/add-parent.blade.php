@@ -5,7 +5,7 @@
         
     @else
     <div>
-    <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="button" wire:click="back_to_list">{{trans('Parent.add_parent')}}</button>
+    <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="button" wire:click="back_to_list">{{trans('Parent.show_table')}}</button>
     <div class="stepwizard">
         <div class="stepwizard-row setup-panel">
             <div class="stepwizard-step">

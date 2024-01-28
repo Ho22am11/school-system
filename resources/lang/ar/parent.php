@@ -42,7 +42,7 @@ return[
 // table 
    'name_father' => 'اسم الاب' ,
    'name_mother' => 'اسم الام' ,
-   
+   'show_table' => 'عرض قائمه اولياء الاومور'
 
 
 ];
