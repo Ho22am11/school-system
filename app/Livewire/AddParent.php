@@ -254,4 +254,12 @@ class AddParent extends Component
     public function back_to_list(){
         $this->show_table = true ;
     }
+    public function delete($id){
+        $per = My_Parent::find($id);
+        if ($per != null) {
+          $per->delete();
+        }
+        session()->flash('Add',trans('message.secces_delete'));
+        return redirect()->to('show_form');
+    }
 }
