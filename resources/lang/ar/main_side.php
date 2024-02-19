@@ -13,7 +13,9 @@ return [
     "parent" => " اولياء الامور "  ,
     "parent_add" =>"اضافه ولي امر " ,
     "parent_list" => "قائمه اولياء الامور" ,
-    "teacher" => "المدرسين"
+    "teacher" => "المدرسين" ,
+    'Teachers'=>'المعلمين',
+    'List_Teachers' => 'قائمة المعلمين',
 
 
 

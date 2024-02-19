@@ -53,6 +53,8 @@ Route::group(
         
         Route::view('/show_form', 'livewire.show_form');
         Route::resource('/teacher' , TeacherController::class);
+        route::get('/add_teacher' , [TeacherController::class , 'add_teacher'])->name('add.teacher');
+        route::post('/add_teacher' , [TeacherController::class , 'store'])->name('teacher.store');
         
         
 
