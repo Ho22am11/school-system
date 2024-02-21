@@ -21,7 +21,8 @@ class TeacherController extends Controller
 
     public function index()
     {
-        return view('teacher.teacher');
+        $teachers = Teacher::all();
+        return view('teacher.teacher' , compact('teachers'));
     }
 
     public function add_teacher(){
@@ -40,7 +41,6 @@ class TeacherController extends Controller
         $teacher->Password = Hash::make($request->Password);
         $teacher->Specialization_id = $request->Specialization_id ;
         $teacher->Gender_id = $request->Gender_id ;
-    
         $teacher->Address = $request->Address ;
         $teacher->save();
 

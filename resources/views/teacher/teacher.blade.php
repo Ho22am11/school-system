@@ -47,7 +47,6 @@
 												<th class="wd-15p border-bottom-0">{{ trans('teachers.Email')}} </th>
 												<th class="wd-15p border-bottom-0">{{ trans('teachers.specialization')}} </th>
 												<th class="wd-15p border-bottom-0">{{ trans('teachers.Gender')}}</th>
-												<th class="wd-15p border-bottom-0">{{ trans('teachers.Joining_Date')}}</th>
 												<th class="wd-15p border-bottom-0">{{ trans('teachers.Address')}}</th>
                                                 <th class="wd-15p border-bottom-0">{{ trans('grade_list.process') }} </th>
 												
@@ -60,16 +59,20 @@
                                             
 											<?php $i =0; ?>
 									
+											@foreach($teachers as $teacher)
 											<?php $i++; ?>
 											
 											<tr>
-												
-
-											
-												
+												<td>{{ $i }}</td>
+												<td>{{ $teacher->Name}}</td>
+												<td>{{ $teacher->Email}}</td>
+												<td>{{ $teacher->specializations->name}}</td>
+												<td>{{ $teacher->genders->name}}</td>
+												<td>{{ $teacher->Address}}</td>
+												<td></td>
 											</tr>
 								
-											
+											@endforeach
 										
 										
 									

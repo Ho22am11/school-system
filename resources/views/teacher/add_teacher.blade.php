@@ -87,7 +87,7 @@
                         <div class="row">
                             <div class="col">
                                 <label> {{ trans('teachers.Joining_Date') }} </label>
-                                <input class="form-control fc-datepicker" name="Joining_Date" placeholder="YYYY-MM-DD"
+                                <input class="form-control fc-datepicker" name="Joining_Date" placeholder="YYYY-MM-DD" id="Joining_Date"
                                     type="text" value="{{ date('Y-m-d') }}" required>
                             </div>
 
