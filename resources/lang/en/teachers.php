@@ -13,6 +13,7 @@ return [
     'specialization_chose'=>'Chose Specialization',
     'Gender'=>'Gender',
     'Gender_chose'=>'Chose Gender',
+    'teacher_chose'=>'Chose Teacher',
     'Joining_Date'=>'Joining_Date',
     'Address'=>'Address',
 ];

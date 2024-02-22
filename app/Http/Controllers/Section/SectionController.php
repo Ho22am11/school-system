@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Classroom;
 use App\Models\Grade;
 use App\Models\Section;
+use App\Models\Teacher;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -18,9 +19,25 @@ class SectionController extends Controller
      */
     public function index()
     {
+        /* example of relation many to many
+         * we have already relation between sections and teachers
+         * if we went know sections related teacher
+         * you give me id of the teacher
+         * ----------
+         * $teachers = Teacher::findOrFail($id);
+         * return $teachers->sections;  // sections her is relationship we make it in model Teacher
+         * -------
+         * and if we went know who is teachers of section
+         * -------
+         * $sections = Section::findOrFail($id);
+         * return $sections->teachers;
+
+        */
         $grades = Grade::all();
         $sections = Section::all();
-        return view('section.section', compact('grades' , 'sections'));
+        $teachers = Teacher::all();
+        $classrooms = Classroom::all();
+        return view('section.section', compact('grades' , 'classrooms', 'sections' , 'teachers'));
     }
 
     /**
@@ -37,13 +54,14 @@ class SectionController extends Controller
     public function store(Request $request)
     {
         try{
-            Section::create([
-                'name' => ['en'=>$request->name_en , 'ar' => $request->name],
-                'grade_id' => $request->grade_id ,
-                'classroom_id' => $request->classrooms,
-                'status' => 1 ,
+            $sections = new Section();
+            $sections->name =['en'=>$request->name_en , 'ar' => $request->name];
+            $sections->grade_id =$request->grade_id;
+            $sections->classroom_id =$request->classrooms;
+            $sections->status = 1;
+            $sections->save();
+            $sections->teachers()->attach($request->teacher_id);
 
-            ]);
             session()->flash('Add',trans('message.secces_grade'));
             return back();
 

@@ -13,6 +13,7 @@ return [
     'specialization_chose'=>'حدد التخصص',
     'Gender'=>'النوع',
     'Gender_chose'=>'حدد النوع ',
+     'teacher_chose' => 'حدد معلم' ,
     'Joining_Date'=>'تاريخ التعين',
     'Address'=>'العنوان',
 

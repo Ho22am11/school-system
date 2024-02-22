@@ -23,4 +23,9 @@ class Section extends Model
     public function classroom(){
         return $this->belongsTo(Classroom::class);
     }
+
+   // relationship many to many with section table
+    public function teachers(){
+        return $this->belongsToMany('App\Models\Teacher' , 'teacher_section');
+    }
 }
