@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Grade\GradeController;
 use App\Http\Controllers\Classroom\ClassroomController;
 use App\Http\Controllers\Section\SectionController;
+use App\Http\Controllers\Students\StudentController;
 use App\Http\Controllers\TeacherController ;
 use Livewire\Livewire;
 /*
@@ -19,7 +20,9 @@ use Livewire\Livewire;
 // Route::get('/grade', [GradeController::class, 'index']);
 
 
-Route::get('/section/{id}',[SectionController::class ,'getclassroom']); 
+Route::get('/section/{id}',[SectionController::class ,'getclassroom']);
+
+Route::get('/sections/{id}',[StudentController::class ,'getsection']); 
 
 Route::group(
     ['middleware' => ['guest']
@@ -30,7 +33,7 @@ Route::group(
 
     });
 
-Route::group(
+Route::group(  
     [
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ,'auth' ]
@@ -55,6 +58,7 @@ Route::group(
         Route::resource('/teacher' , TeacherController::class);
         route::get('/add_teacher' , [TeacherController::class , 'add_teacher'])->name('add.teacher');
         route::post('/add_teacher' , [TeacherController::class , 'store'])->name('teacher.store');
+        Route::resource('/student' , StudentController::class);
         
         
 

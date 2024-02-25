@@ -14,7 +14,7 @@ return[
    'National_ID_Father' => 'رقم الهوية',
    'Passport_ID_Father' => 'رقم جواز السفر',
    'Phone_Father' => 'رقم الهاتف',
-   'Nationality_Father_id' => 'الجنسية',
+   'Nationality' => 'الجنسية',
    'Blood_Type_Father_id' => 'فصلية الدم',
    'Religion_Father_id' => 'الديانة',
    'Address_Father' => 'عنوان الاب',

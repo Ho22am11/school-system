@@ -15,6 +15,8 @@ return [
     "parent_list" => " Parent List",
     "teacher" => "Teacher",
     'Teachers'=>'Teachers',
+    'studants' => 'Students' ,
+    'add_studant' => 'Add Student' , 
     'List_Teachers' => 'List Teachers',
 
 ];

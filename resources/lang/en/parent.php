@@ -10,7 +10,7 @@ return[
     "password" => "Password" ,
     "National_ID_Father" => "National ID Father" ,
     "Phone_Father" => "Phone Father" ,
-    "Nationality_Father" => "Nationality Father" ,
+    "Nationality" => "Nationality" ,
     'add_parent' => 'add parent',
     'Step1' => 'Father information',
     'Step2' => 'Mother information',

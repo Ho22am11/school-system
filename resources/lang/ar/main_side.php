@@ -15,6 +15,8 @@ return [
     "parent_list" => "قائمه اولياء الامور" ,
     "teacher" => "المدرسين" ,
     'Teachers'=>'المعلمين',
+    'studants' => 'الطلاب' ,
+    'add_studant' => 'اضافه طالب' , 
     'List_Teachers' => 'قائمة المعلمين',
 
 
