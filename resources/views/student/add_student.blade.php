@@ -34,19 +34,19 @@
         <div class="col-lg-12 col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('teacher.store') }}" method="post" >
+                    <form action="{{ route('student.store') }}" method="post" >
                     
                         @csrf
                         <div class="row">
                             
                             <div class="col">
                                 <label for="inputName" class="control-label"> {{ trans('students.Name_ar') }}</label>
-                                <input type="text" class="form-control" id="Name" name="Name" required>
+                                <input type="text" class="form-control" id="Name" name="Name" >
                             </div>
                             
                             <div class="col">
                                 <label for="inputName" class="control-label"> {{ trans('students.Name_en') }}</label>
-                                <input type="text" class="form-control" id="Name_en" name="Name_en" required>
+                                <input type="text" class="form-control" id="Name_en" name="Name_en" >
                             </div>
 
                            
@@ -60,14 +60,14 @@
 
                             <div class="col">
                                 <label for="inputName" class="control-label"> {{ trans('teachers.Email') }} </label>
-                                <input type="email" class="form-control" id="Email" name="Email" required>
+                                <input type="email" class="form-control" id="Email" name="Email" >
                             </div>
                             
                             
 
                             <div class="col">
                                 <label for="inputName" class="control-label"> {{ trans('teachers.Password') }} </label>
-                                <input type="password" class="form-control" id="Password" name="Password" required>
+                                <input type="password" class="form-control" id="Password" name="Password" >
                             </div>
 
 
@@ -111,7 +111,7 @@
 
                             <div class="col">
                                 <label for="inputName" class="control-label"> {{ trans('students.yesr_birth') }}</label>
-                                <input type="text" class="form-control" id="date_of_birth" name="date_of_birth" required>
+                                <input type="text" class="form-control" id="date_of_birth" name="date_of_birth" >
                             </div>
 
                            

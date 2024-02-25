@@ -7,4 +7,6 @@ interface StudentRepositoryInterface{
     public function Create_Student();
 
     public function getsections($id);
+
+    public function StoreStudent($request);
 }

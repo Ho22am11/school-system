@@ -34,7 +34,7 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $this->Student->StoreStudent($request);
     }
 
     /**
