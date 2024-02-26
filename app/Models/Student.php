@@ -12,5 +12,20 @@ class Student extends Model
     public $translatable =['name'] ;
     protected $guarded = [];
 
+    public function grades(){
+        return $this->belongsTo('App\Models\Grade' , 'Grade_id');
+    }
+
+    public function classrooms(){
+        return $this->belongsTo('App\Models\Classroom' , 'classroom_id');
+    }
+
+    public function sections(){
+        return $this->belongsTo('App\Models\Section' , 'section_id');
+    }
+
+     public function genders(){
+        return $this->belongsTo('App\Models\Gender' , 'Gender_id');
+    }
    
 }

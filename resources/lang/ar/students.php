@@ -3,6 +3,7 @@
 return [
     'add_student'=>'اضافه طالب',
     'the_students' => 'الطلاب',
+    'name' => 'الاسم' ,
     'Name_ar'=>'اسم الطالب بلعربي',
     'Name_en'=>'اسم الطالب بالانجليزية',
     'Nationality_chose'=>'حدد الجنسية',

@@ -8,7 +8,7 @@ return [
     "grade_list" => "Grade List",
     "classrooms" => "Classrooms",
     "classrooms_list" => "Classrooms List",
-    "section" => "Sections" ,
+    "section" => "Section" ,
     "section_list" => "Sections List",
     "parent" => " Parent ",
     "parent_add" => "Add Parent ",
@@ -16,6 +16,7 @@ return [
     "teacher" => "Teacher",
     'Teachers'=>'Teachers',
     'studants' => 'Students' ,
+    'student_list' => 'Student List',
     'add_studant' => 'Add Student' , 
     'List_Teachers' => 'List Teachers',
 

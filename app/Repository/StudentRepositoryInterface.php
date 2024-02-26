@@ -9,4 +9,6 @@ interface StudentRepositoryInterface{
     public function getsections($id);
 
     public function StoreStudent($request);
+
+    public function ShowStudent();
 }

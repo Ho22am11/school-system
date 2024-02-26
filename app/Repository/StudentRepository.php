@@ -45,4 +45,9 @@ class StudentRepository implements StudentRepositoryInterface {
         ]);
         return back();
     }
+
+    public function ShowStudent(){
+        $students = Student::all();
+        return view('student.students' , compact('students'));
+    }
 }

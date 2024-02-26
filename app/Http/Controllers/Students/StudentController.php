@@ -18,7 +18,7 @@ class StudentController extends Controller
     
     public function index()
     {
-
+       return $this->Student->ShowStudent();
     }
  
     /**

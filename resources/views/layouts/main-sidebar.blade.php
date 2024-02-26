@@ -117,7 +117,7 @@
 							<li><a class="slide-item" href="{{ route('student.create')}}">{{ trans('main_side.add_studant')}}</a></li>
 					 
 						  
-							<li><a class="slide-item" href="{{ url('/' . $page='roles') }}">صلاحيات المستخدمين </a></li>
+							<li><a class="slide-item" href="{{ route('student.index') }}">{{ trans('main_side.student_list')}}</a></li>
 					   
 
 						</ul>
