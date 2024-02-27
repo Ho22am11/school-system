@@ -34,7 +34,7 @@
         <div class="col-lg-12 col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('student.store') }}" method="post" >
+                    <form action="{{ route('student.store') }}" method="post"  autocomplete="off" enctype="multipart/form-data" >
                     
                         @csrf
                         <div class="row">
@@ -156,6 +156,15 @@
                                 </select>
                             </div>
                         </div><br>
+                        
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="academic_year">gdgdgs : <span class="text-danger"></label>
+                                <input type="file" accept="image/*" name="photos[]" multiple>
+                    
+                            </div>
+                    
+                        </div>
                         
                         <div class="d-flex justify-content-center">
                             <button type="submit" class="btn btn-primary"> {{ trans('parent.Finish') }}</button>
