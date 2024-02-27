@@ -11,6 +11,7 @@ use App\Models\Religion;
 use App\Models\Section;
 use App\Models\Student;
 use App\Models\Teacher;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class StudentRepository implements StudentRepositoryInterface {
@@ -31,6 +32,8 @@ class StudentRepository implements StudentRepositoryInterface {
 
     public function StoreStudent($request){
 
+
+        DB::beginTransaction();
         $students = new Student();
         $students->name =  ['en'=>$request->Name_en , 'ar' =>$request->Name ];
         $students->email =  $request->Email;
@@ -53,7 +56,7 @@ class StudentRepository implements StudentRepositoryInterface {
 
                 $images = new image();
                 $images->filename = $name ;
-                $images->imageable_id =  $students->id ;
+                $images->imageable_id0 =  $students->id ;
                 $images->imageable_type = 'App\Models\Student' ;
                 $images->save();
                 
@@ -61,7 +64,7 @@ class StudentRepository implements StudentRepositoryInterface {
             }
         }
 
-
+        DB::commit();
         return back();
     }
 
