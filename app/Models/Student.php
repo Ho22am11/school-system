@@ -27,5 +27,9 @@ class Student extends Model
      public function genders(){
         return $this->belongsTo('App\Models\Gender' , 'Gender_id');
     }
+
+    public function images(){
+        return $this->morphMany('App\Models\image' , 'imageable');
+    }
    
 }
