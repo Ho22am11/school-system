@@ -56,7 +56,7 @@ class StudentRepository implements StudentRepositoryInterface {
 
                 $images = new image();
                 $images->filename = $name ;
-                $images->imageable_id0 =  $students->id ;
+                $images->imageable_id =  $students->id ;
                 $images->imageable_type = 'App\Models\Student' ;
                 $images->save();
                 
@@ -68,8 +68,32 @@ class StudentRepository implements StudentRepositoryInterface {
         return back();
     }
 
+    public function viewstud($id){
+        $Student = Student::findOrfail($id);
+        return view('student.student' , compact('Student'));
+    }
+
     public function ShowStudent(){
         $students = Student::all();
         return view('student.students' , compact('students'));
+    }
+
+    public function UploadAttachment($request){
+
+        DB::beginTransaction();
+
+        foreach($request->file('photos') as $file){
+        $file->StoreAs('attachments/students/'.$request->student_name , $file->getClientOriginalName() ,'upload_attachments');
+
+        $name = $file->getClientOriginalName();
+        $images = new image();
+        $images->filename = $name ;
+        $images->imageable_id = $request->student_id ;
+        $images->imageable_type = 'App\Models\Student' ;
+        $images->save();
+
+        }
+        DB::commit();
+        return back();
     }
 }

@@ -24,6 +24,7 @@ Route::get('/section/{id}',[SectionController::class ,'getclassroom']);
 
 Route::get('/sections/{id}',[StudentController::class ,'getsection']); 
 
+
 Route::group(
     ['middleware' => ['guest']
     ], function(){ 
@@ -49,8 +50,11 @@ Route::group(
         Route::resource('/section', SectionController::class);
         Route::post('/section/up',[SectionController::class , 'update'])->name('section.update');
         Route::post('/section/delete',[SectionController::class , 'destroy'])->name('section.delete');
+        Route::post('/upload_attachment' ,[StudentController::class , 'upload_attachment'] )->name('upload_attachment');
+
         livewire::setUpdateRoute(function ($handle){
             return Route::post('/livewwire/update' , $handle);
+        
 
         });
         
@@ -59,6 +63,7 @@ Route::group(
         route::get('/add_teacher' , [TeacherController::class , 'add_teacher'])->name('add.teacher');
         route::post('/add_teacher' , [TeacherController::class , 'store'])->name('teacher.store');
         Route::resource('/student' , StudentController::class);
+       
         
         
 

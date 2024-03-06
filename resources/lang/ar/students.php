@@ -15,4 +15,8 @@ return [
     'teacher_chose'=>'Chose Teacher',
     'Joining_Date'=>'Joining_Date',
     'Address'=>'Address',
+
+    'Student_details' => 'تفاصيل الطالب' ,
+    'filename' => 'اسم الملف' ,
+    'created_at' => 'اضيف في' ,
 ];

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Students;
 
 use App\Http\Controllers\Controller;
 use App\Models\Section;
+use App\Models\Student;
 use App\Repository\StudentRepositoryInterface;
 use Illuminate\Http\Request;
 
@@ -40,9 +41,9 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+       return $this->Student->viewstud($id);
     }
 
     /**
@@ -56,7 +57,7 @@ class StudentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
         //
     }
@@ -72,6 +73,11 @@ class StudentController extends Controller
     public function getsection($id)
     {
         return $this->Student->getsections($id);
+    }
+
+    public function upload_attachment(Request $request)
+    {
+        return $this->Student->UploadAttachment($request);
     }
 
 }

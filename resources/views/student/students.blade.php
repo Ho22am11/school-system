@@ -67,7 +67,9 @@
 												<td>{{ $student->classrooms->name}}</td>
 												<td>{{ $student->sections->name}}</td>
 												<td>{{ $student->genders->name}}</td>
-                                                <td></td>
+                                                <td>
+													<a href="{{ route('student.show' , $student->id )}}" class="btn btn-warning btn-sm" role="button" aria-pressed="ture"><i class="far fa-eye"></i></a>
+												</td>
 											</tr>
 								
 											@endforeach

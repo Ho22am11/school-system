@@ -17,4 +17,8 @@ return [
     'teacher_chose'=>'Chose Teacher',
     'Joining_Date'=>'Joining_Date',
     'Address'=>'Address',
+
+    'Student_details' => 'Student details' ,
+    'filename' => 'File Name' ,
+    'created_at' => 'Add at' ,
 ];
