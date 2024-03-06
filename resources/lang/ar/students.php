@@ -19,4 +19,5 @@ return [
     'Student_details' => 'تفاصيل الطالب' ,
     'filename' => 'اسم الملف' ,
     'created_at' => 'اضيف في' ,
+    'Download' => 'تنزيل' ,
 ];

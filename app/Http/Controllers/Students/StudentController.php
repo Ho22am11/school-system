@@ -57,9 +57,9 @@ class StudentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function Download($filename , $studentname)
     {
-        //
+        return $this->Student->DownloadAttachment($filename , $studentname);
     }
 
     /**
@@ -79,5 +79,7 @@ class StudentController extends Controller
     {
         return $this->Student->UploadAttachment($request);
     }
+
+    
 
 }

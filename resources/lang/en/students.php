@@ -21,4 +21,5 @@ return [
     'Student_details' => 'Student details' ,
     'filename' => 'File Name' ,
     'created_at' => 'Add at' ,
+    'Download' => 'Download' ,
 ];

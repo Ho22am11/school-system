@@ -119,15 +119,12 @@
                                                                 <td>{{$attachment->filename}}</td>
                                                                 <td>{{$attachment->created_at->diffForHumans()}}</td>
                                                                 <td colspan="2">
-                                                                    <a class="btn btn-outline-info btn-sm"
-                                                                       href="{{url('Download_attachment')}}/{{ $attachment->imageable->name }}/{{$attachment->filename}}"
-                                                                       role="button"><i class="fas fa-download"></i>&nbsp; {{trans('Students_trans.Download')}}</a>
-            
-                                                                    <button type="button" class="btn btn-outline-danger btn-sm"
-                                                                            data-toggle="modal"
-                                                                            data-target="#Delete_img{{ $attachment->id }}"
-                                                                            title="{{ trans('Grades_trans.Delete') }}">{{trans('Students_trans.delete')}}
-                                                                    </button>
+                                                                    <a class="btn btn-outline-info btn-sm" href="{{ url('download_Attachments')}}/ {{$attachment->filename}} /{{ $attachment->imageable->name}}" 
+                                                                       role="button"><i class="fas fa-download"></i>&nbsp; {{trans('Students.Download')}}</a>
+                                                                    
+                                                                    
+                                                          
+
             
                                                                 </td>
                                                             </tr>

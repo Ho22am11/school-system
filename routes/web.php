@@ -63,6 +63,7 @@ Route::group(
         route::get('/add_teacher' , [TeacherController::class , 'add_teacher'])->name('add.teacher');
         route::post('/add_teacher' , [TeacherController::class , 'store'])->name('teacher.store');
         Route::resource('/student' , StudentController::class);
+        Route::get('download_Attachments/{filename}/{studentname}' ,[StudentController::class , 'Download']);
        
         
         

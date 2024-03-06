@@ -96,4 +96,8 @@ class StudentRepository implements StudentRepositoryInterface {
         DB::commit();
         return back();
     }
+
+    public function DownloadAttachment($filename , $studentname){
+          return response()->download(public_path('attachments/students'.'pop'.'/'.$filename));
+    }
 }

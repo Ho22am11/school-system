@@ -19,5 +19,7 @@ interface StudentRepositoryInterface
 
     public function UploadAttachment($request);
 
+    public function DownloadAttachment($filename , $studentname);
+
  
 }
