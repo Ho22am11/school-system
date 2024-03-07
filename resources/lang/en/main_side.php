@@ -19,5 +19,6 @@ return [
     'student_list' => 'Student List',
     'add_studant' => 'Add Student' , 
     'List_Teachers' => 'List Teachers',
+    'student_promotions' => 'Student Promotions' ,
 
 ];

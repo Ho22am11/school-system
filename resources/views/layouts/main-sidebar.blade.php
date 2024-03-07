@@ -118,12 +118,14 @@
 					 
 						  
 							<li><a class="slide-item" href="{{ route('student.index') }}">{{ trans('main_side.student_list')}}</a></li>
+
+							<li><a class="slide-item" href="{{ route('promotion.index') }}">{{ trans('main_side.student_promotions')}}</a></li>
 					   
 
 						</ul>
 					</li>
 				       
-
+ 
 					
 				</ul>
 			</div>
