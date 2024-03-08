@@ -54,8 +54,15 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="academic_year">{{trans('Students_trans.academic_year')}} : <span class="text-danger">*</span></label>
-                                    <select class="custom-select mr-sm-2" name="academic_year">
+                                    <select class="custom-select mr-sm-2" name="academic_year" >
                                         <option selected disabled>{{trans('Parent_trans.Choose')}}...</option>
+                                        <?php
+                                        $this_year = date('Y');
+                                        for($year = $this_year ; $year <= $this_year+1 ; $year++ )
+                                           echo "<option value =$year>$year</option>"
+                                        ?>
+
+
                                        
                                     </select>
                                 </div>
@@ -95,7 +102,11 @@
                                     <label for="academic_year">{{trans('Students_trans.academic_year')}} : <span class="text-danger">*</span></label>
                                     <select class="custom-select mr-sm-2" name="academic_year_new">
                                         <option selected disabled>{{trans('Parent_trans.Choose')}}...</option>
-                                     
+                                        <?php
+                                        $this_year = date('Y');
+                                        for($year = $this_year ; $year <= $this_year+1 ; $year++ )
+                                           echo "<option value =$year>$year</option>"
+                                        ?>
                                     </select>
                                 </div>
                             </div>

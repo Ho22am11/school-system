@@ -46,6 +46,7 @@ class StudentRepository implements StudentRepositoryInterface {
         $students->classroom_id =  $request->classrooms;
         $students->section_id =  $request->sections;
         $students->parent_id =  $request->parent_id;
+        $students->academic_year = $request->academic_year;
         $students->save();
      
         if($request->hasfile('photos'))

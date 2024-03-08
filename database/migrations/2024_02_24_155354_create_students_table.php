@@ -22,7 +22,7 @@ return new class extends Migration
             $table->foreign('Gender_id')->references('id')->on('genders')->onDelete('cascade');
             $table->unsignedBigInteger('Religion_Father_id');
             $table->foreign('Religion_Father_id')->references('id')->on('religions')->onDelete('cascade');;
-            $table->date('date_of_birth');
+            $table->string('date_of_birth');
             $table->unsignedBigInteger('Grade_id');
             $table->foreign('Grade_id')->references('id')->on('grades')->onDelete('cascade');
             $table->unsignedBigInteger('classroom_id');
@@ -31,6 +31,7 @@ return new class extends Migration
             $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
             $table->unsignedBigInteger('parent_id');
             $table->foreign('parent_id')->references('id')->on('my__parents')->onDelete('cascade');
+            $table->string('academic_year');
             $table->timestamps();
         });
     }

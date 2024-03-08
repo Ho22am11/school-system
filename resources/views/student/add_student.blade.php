@@ -111,7 +111,17 @@
 
                             <div class="col">
                                 <label for="inputName" class="control-label"> {{ trans('students.yesr_birth') }}</label>
-                                <input type="text" class="form-control" id="date_of_birth" name="date_of_birth" >
+                                <select id="date_of_birth" name="date_of_birth" class="form-control">
+                                    <?php 
+                                    
+                                    $this_year = date('Y');
+                                    
+                                    for($frist_year = $this_year-17 ; $frist_year <= $this_year-5 ;  $frist_year++ ){
+                                        echo "<option value=\"$frist_year\" >$frist_year</option>";
+                                    }
+
+                                    ?>
+                                </select>
                             </div>
 
                            
@@ -153,6 +163,26 @@
                                     @foreach ($Parents as $Parent)
                                      <option value="{{ $Parent->id}}" >{{ $Parent->Name_Father }}</option>
                                  @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="academic_year">{{trans('Students_trans.academic_year')}} : <span class="text-danger">*</span></label>
+                                <select class="custom-select mr-sm-2" name="academic_year">
+                                     <?php 
+                                    
+                                    $this_year = date('Y');
+                                    
+                                    for($frist_year = $this_year ; $frist_year <= $this_year+1 ;  $frist_year++ ){
+                                        echo "<option value=\"$frist_year\" >$frist_year</option>";
+                                    }
+
+                                    ?>
+                                </select>
+
+                                    
+                                 
                                 </select>
                             </div>
                         </div><br>
@@ -221,6 +251,7 @@
                     dataType: "json",
                     success: function(data) {
                         $('select[name="classrooms"]').empty();
+                        $('select[name="classrooms"]').append('<option  selected> {{ trans('parent.Choose') }}</option>');
                         $.each(data, function(key, value) {
                             $('select[name="classrooms"]').append('<option value="' + key + '">' + value + '</option>');
                         });

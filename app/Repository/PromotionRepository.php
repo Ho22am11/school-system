@@ -15,7 +15,7 @@ class PromotionRepository implements PromotionRepositoryInterface{
     }
 
     public function store($request){
-        $students = Student::where('Gender_id',$request->Grade_id)->where('classroom_id', $request->Classroom_id)->where('section_id',$request->section_id)->get();
+        $students = Student::where('Gender_id',$request->Grade_id)->where('classroom_id', $request->Classroom_id)->where('section_id',$request->section_id)->where('academic_year' ,$request->academic_year )->get();
         // don't forget the get() agine please -_-
 
 
@@ -27,6 +27,7 @@ class PromotionRepository implements PromotionRepositoryInterface{
                     'Gender_id' => $request->Grade_id_new ,
                     'classroom_id' => $request->Classroom_id_new,
                     'section_id' => $request->section_id_new,
+                    'academic_year' => $request->academic_year_new ,
                 ]
                 );
             
@@ -35,6 +36,8 @@ class PromotionRepository implements PromotionRepositoryInterface{
             $promo->from_grade = $request->Grade_id ;
             $promo->from_classroom = $request->Classroom_id;
             $promo->from_section = $request->section_id ;
+            $promo->academic_year = $request->academic_year ;
+            $promo->academic_year_new = $request->academic_year_new ;
 
             $promo->to_grade = $request->Grade_id_new ;
             $promo->to_classroom = $request->Classroom_id_new ;
