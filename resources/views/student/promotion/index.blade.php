@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
- فارغ
+{{ trans('main_side.student_promotions')}}
 @stop
 @section('css')
 @endsection
@@ -9,7 +9,7 @@
 				<div class="breadcrumb-header justify-content-between">
 					<div class="my-auto">
 						<div class="d-flex">
-							<h4 class="content-title mb-0 my-auto">Pages</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ Empty</span>
+							<h4 class="content-title mb-0 my-auto">{{ trans('main_side.studants')}}</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/{{ trans('main_side.student_promotions')}}</span>
 						</div>
 					</div>
 				
@@ -40,7 +40,7 @@
                                 <label for="Classroom_id">{{trans('Students_trans.classrooms')}} : <span
                                         class="text-danger">*</span></label>
                                 <select class="custom-select mr-sm-2" name="Classroom_id" required onchange="console.log($(this).val())">
-                                    <option selected >{{trans('Parent_trans.Choose')}}...</option>
+                                   
                                 </select>
                             </div>
 
@@ -127,7 +127,8 @@
                     dataType: "json",
                     success: function(data) {
                         $('select[name="Classroom_id"]').empty();  
-                        $.each(data, function(key, value) {      
+                         $('select[name="Classroom_id"]').append('<option  selected disabled > {{trans('Parent_trans.Choose')}} </option>');
+                        $.each(data, function(key, value) {     
                             $('select[name="Classroom_id"]').append('<option value="' + key + '">' + value + '</option>');
                         });
                     },
@@ -179,6 +180,7 @@
                     dataType: "json",
                     success: function(data) {
                         $('select[name="Classroom_id_new"]').empty();  
+                        $('select[name="Classroom_id_new"]').append('<option  selected disabled > {{trans('Parent_trans.Choose')}} </option>');
                         $.each(data, function(key, value) {      
                             $('select[name="Classroom_id_new"]').append('<option value="' + key + '">' + value + '</option>');
                         });
