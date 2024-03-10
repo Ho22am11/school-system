@@ -121,6 +121,7 @@
 
 							<li><a class="slide-item" href="{{ route('promotion.index') }}">{{ trans('main_side.student_promotions')}}</a></li>
 					   
+							<li><a class="slide-item" href="{{ route('promotion.create') }}">{{ trans('main_side.management_promotions')}}</a></li>
 
 						</ul>
 					</li>

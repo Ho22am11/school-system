@@ -20,6 +20,7 @@ return [
     'add_studant' => 'اضافه طالب' , 
     'List_Teachers' => 'قائمة المعلمين',
     'student_promotions' => 'ترقيه الطلاب' ,
+    'management_promotions' => 'اداره الترقية' ,
 
 
 

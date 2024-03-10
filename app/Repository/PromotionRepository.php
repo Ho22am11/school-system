@@ -53,4 +53,40 @@ class PromotionRepository implements PromotionRepositoryInterface{
 
         return back();
     }
+
+    public function create(){
+        $promotions = Promotion::all();
+        return view('student.promotion.management' , compact('promotions'));
+
+    }
+
+    public function DeleteAll($request){
+        DB::beginTransaction();
+        if($request->page_id == 1){
+           
+            $promotions = Promotion::all();
+
+            foreach($promotions as $promotion){
+                $ids = explode(',' , $promotion->student_id );
+                Student::whereIn('id' , $ids)->update(
+                [
+                    'Gender_id' => $promotion->from_grade ,
+                    'classroom_id' => $promotion->from_classroom,
+                    'section_id' => $promotion->from_section,
+                    'academic_year' => $promotion->academic_year ,
+
+                ]);
+                Promotion::truncate();
+            }
+            
+            
+        
+            return back();
+        }
+        
+        else{
+
+        }
+        DB::commit();
+    }
 }
