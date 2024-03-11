@@ -21,5 +21,9 @@ return [
     'List_Teachers' => 'List Teachers',
     'student_promotions' => 'Student Promotions' ,
     'management_promotions' => 'Management Promotions' ,
+    'graduated' => 'The Graduated' ,
+    'graduated_add' => 'Add Graduated' ,
+    'graduated_list' => 'List Graduated' ,
+    
 
 ];

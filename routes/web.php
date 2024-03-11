@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Grade\GradeController;
 use App\Http\Controllers\Classroom\ClassroomController;
 use App\Http\Controllers\Section\SectionController;
+use App\Http\Controllers\Students\GraduatedController;
 use App\Http\Controllers\Students\PromotionController;
 use App\Http\Controllers\Students\StudentController;
 use App\Http\Controllers\TeacherController ;
@@ -53,6 +54,7 @@ Route::group(
         Route::post('/section/delete',[SectionController::class , 'destroy'])->name('section.delete');
         Route::post('/upload_attachment' ,[StudentController::class , 'upload_attachment'] )->name('upload_attachment');
         Route::resource('/promotion', PromotionController::class);
+        Route::resource('/graduated' , GraduatedController::class);
         livewire::setUpdateRoute(function ($handle){
             return Route::post('/livewwire/update' , $handle);
         

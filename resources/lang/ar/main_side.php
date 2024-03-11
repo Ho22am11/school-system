@@ -21,6 +21,9 @@ return [
     'List_Teachers' => 'قائمة المعلمين',
     'student_promotions' => 'ترقيه الطلاب' ,
     'management_promotions' => 'اداره الترقية' ,
+    'graduated' => 'الخريجين' ,
+    'graduated_add' => 'اضافه خريج' ,
+    'graduated_list' => 'قائمة الخريجين' ,
 
 
 
