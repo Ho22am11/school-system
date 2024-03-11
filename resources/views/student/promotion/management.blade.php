@@ -55,7 +55,7 @@
 												<th class="alert-success">{{ trans('promotion.The_previous_classroom')}}</th>
 												<th class="alert-success">{{ trans('promotion.The_previous_section')}}</th>
 												<th class="alert-success">{{ trans('promotion.The_current_year')}}</th>
-                                                <th class="wd-10p border-bottom-0">{{ trans('My_Classes_trans.Processes') }} </th>
+                                                <th class="wd-20p border-bottom-0">{{ trans('My_Classes_trans.Processes') }} </th>
 												
                                             
 											</tr>
@@ -77,19 +77,24 @@
                                                 <td>{{ $promotion->n_sections->name}}</td>
                                                 <td>{{ $promotion->academic_year_new}}</td>
                                                 <td>
-													<a href="{{ route('student.show' , $promotion->id )}}" class="btn btn-warning btn-sm" role="button" aria-pressed="ture"><i class="far fa-eye"></i></a>
+													<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#Delete_one{{$promotion->id}}">
+														{{ __('promotion.review_student')}}
+													  </button>
+													<Button type="button" class="btn btn-outline-success" data-toggle="model" data-target="#">{{ __('promotion.graduation')}}</Button>
 												</td>
+												@include('student.promotion.Delete_one');  
 											</tr>
-								
+											
+								        	     
 											@endforeach
                                       
 																
 										
-									
+											@include('student.promotion.Delete_all');
 										</tbody>
 									</table>
 
-                                    @include('student.promotion.Delete_all');
+                                    
 							
 						
 						</div>

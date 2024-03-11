@@ -85,7 +85,17 @@ class PromotionRepository implements PromotionRepositoryInterface{
         }
         
         else{
-
+            $promotion = Promotion::find($request->id);
+            
+            Student::find( $promotion->student_id)->update([
+                'Grade_id' => $promotion->from_grade ,
+                'classroom_id'  => $promotion->from_classroom ,
+                'section_id'  => $promotion-> from_section ,
+                'academic_year'  => $promotion->academic_year ,
+            ]);
+            Promotion::destroy($request->id);
+            
+            
         }
         DB::commit();
     }

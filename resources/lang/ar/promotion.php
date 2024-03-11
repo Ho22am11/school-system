@@ -11,5 +11,7 @@ return[
     'The_current_year' => ' السنه الحالية',
     'review' => 'تراجع لكل العمليات' ,
     'conform_review' => 'هل أنت متأكد من رغبتك في إجراء عملية تراجع لكل الطلاب؟' ,
+    'review_student' => 'اعاده',
+    'graduation' => 'تخرج' ,
 
 ];

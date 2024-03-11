@@ -11,5 +11,7 @@ return[
     'The_current_year' => 'The current year',
     'review' => 'review of all operations',
     'conform_review' => 'Are you sure about conducting a comprehensive review for all students ?' ,
+    'review_student' => 'Review',
+    'graduation' => 'Graduation' ,
 
 ];
