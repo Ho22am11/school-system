@@ -146,6 +146,23 @@
 				  </ul>
 			  </li>
 
+			  <!-- accounts-->
+
+				<li class="side-item side-item-category">{{trans('fees.the_accounts')}}</li>
+
+				<li class="slide">
+				  <a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><i class="fa-solid fa-user-vneck"></i>{{trans('fees.the_accounts')}}</a>
+				 <ul class="slide-menu">
+					  
+					  <li><a class="slide-item" href="{{ route('fee.index') }}">{{trans('fees.school_expenses')}}</a></li>
+			   
+					
+					  <li><a class="slide-item" href="{{ url('/' . $page='graduated') }}">{{trans('main_side.graduated_list')}}</a></li>
+				 
+
+				  </ul>
+			  </li>
+
 
 					
 					

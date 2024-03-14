@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Grade\GradeController;
 use App\Http\Controllers\Classroom\ClassroomController;
+use App\Http\Controllers\Fees\FeeController;
 use App\Http\Controllers\Section\SectionController;
 use App\Http\Controllers\Students\GraduatedController;
 use App\Http\Controllers\Students\PromotionController;
@@ -55,6 +56,7 @@ Route::group(
         Route::post('/upload_attachment' ,[StudentController::class , 'upload_attachment'] )->name('upload_attachment');
         Route::resource('/promotion', PromotionController::class);
         Route::resource('/graduated' , GraduatedController::class);
+        Route::resource('/fee' , FeeController::class );
         livewire::setUpdateRoute(function ($handle){
             return Route::post('/livewwire/update' , $handle);
         
@@ -67,7 +69,9 @@ Route::group(
         route::post('/add_teacher' , [TeacherController::class , 'store'])->name('teacher.store');
         Route::resource('/student' , StudentController::class);
         Route::get('download_Attachments/{filename}/{studentname}' ,[StudentController::class , 'Download']);
+        Route::post('/fee.update' , [FeeController::class , 'update'])->name('fee.updatef');
        
+
         
         
 
