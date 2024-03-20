@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Grade\GradeController;
 use App\Http\Controllers\Classroom\ClassroomController;
 use App\Http\Controllers\Fees\FeeController;
+use App\Http\Controllers\Fees\FeeinvoicesController;
 use App\Http\Controllers\Section\SectionController;
 use App\Http\Controllers\Students\GraduatedController;
 use App\Http\Controllers\Students\PromotionController;
@@ -57,6 +58,7 @@ Route::group(
         Route::resource('/promotion', PromotionController::class);
         Route::resource('/graduated' , GraduatedController::class);
         Route::resource('/fee' , FeeController::class );
+        Route::resource('/fee_invoices' , FeeinvoicesController::class );
         livewire::setUpdateRoute(function ($handle){
             return Route::post('/livewwire/update' , $handle);
         

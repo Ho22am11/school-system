@@ -8,6 +8,9 @@ return [
     'add_fee' =>'Add Fee' ,
     'semester' => 'Semester',
     'amount' => 'Amount' ,
+    'type' => 'Type Fees' ,
+    'bus_Expenses' => 'Bus Expenses' ,
+    'uneform_Expenses' => 'Uniform Expenses' ,
 
 
 ];

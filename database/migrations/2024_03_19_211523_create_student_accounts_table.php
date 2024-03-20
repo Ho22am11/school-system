@@ -11,32 +11,26 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('fees', function (Blueprint $table) {
+        Schema::create('student_accounts', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('semester');
-            $table->string('academic_year'); 
-            $table->decimal('amount');
-            $table->integer('type');
-            $table->timestamps();
+            $table->decimal('Debit')->nullable();
+            $table->decimal('credit')->nullable();
+           
         });
 
-        Schema::table('fees', function (Blueprint $table){
-
+        Schema::table('student_accounts' , function (Blueprint $table){
+            $table->foreignId('student_id')->references('id')->on('students')->onDelete('cascade');
             $table->foreignId('Grade_id')->references('id')->on('grades')->onDelete('cascade');
             $table->foreignId('classroom_id')->references('id')->on('classrooms')->onDelete('cascade');
-            $table->foreignId('section_id')->references('id')->on('sections')->onDelete('cascade');
-
+            
         });
     }
-
-   
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('fees');
+        Schema::dropIfExists('student_accounts');
     }
 };

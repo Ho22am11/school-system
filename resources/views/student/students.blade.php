@@ -66,10 +66,21 @@
 												<td>{{ $student->grades->name}}</td>
 												<td>{{ $student->classrooms->name}}</td>
 												<td>{{ $student->sections->name}}</td>
-												<td>{{ $student->genders->name}}</td>
-                                                <td>
-													<a href="{{ route('student.show' , $student->id )}}" class="btn btn-warning btn-sm" role="button" aria-pressed="ture"><i class="far fa-eye"></i></a>
-												</td>
+												<td>{{ $student->genders->name}}</td> 
+												<td>
+                                                    <div class="dropdown show">
+                                                        <a class="btn btn-success btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															{{ trans('grade_list.process') }}
+                                                        </a>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                            <a class="dropdown-item" href="{{ route('student.show' , $student->id )}}"><i style="color: #ffc107" class="far fa-eye "></i>&nbsp; {{ __('students.Student_details')}}</a>                                                           
+															 <a class="dropdown-item" href="{{ route('fee_invoices.show' , $student->id )}}"><i style="color: #0000cc" class="fa fa-edit"></i>&nbsp;اضافة فاتورة رسوم&nbsp;</a>
+                                                            <a class="dropdown-item" href=""><i style="color: #9dc8e2" class="fas fa-money-bill-alt"></i>&nbsp; &nbsp;سند قبض</a>
+                                                            <a class="dropdown-item" href=""><i style="color: #9dc8e2" class="fas fa-money-bill-alt"></i>&nbsp; &nbsp; استبعاد رسوم</a>
+                                                            <a class="dropdown-item" href=""><i style="color:goldenrod" class="fas fa-donate"></i>&nbsp; &nbsp;سند صرف</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
 											</tr>
 								
 											@endforeach

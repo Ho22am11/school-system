@@ -8,4 +8,7 @@ return [
     'add_fee' =>'اضافه مصاريف' ,
     'semester' => 'الفصل الدراسي',
      'amount' => 'المبلغ' ,
+     'type' => 'نوع المصروفات' ,
+     'bus_Expenses' => 'مصروفات باص' ,
+     'uneform_Expenses' => 'مصروفات الزي' ,
 ];

@@ -22,10 +22,12 @@ class FeeRepository implements FeeRepositoryInterface{
             'name' => [ 'en' => $request->Name_en , 'ar' => $request->Name] ,
             'semester' => $request->semester ,
             'academic_year' => $request->academic_year ,
-          // 'amount' => $request->amount,
+            'amount' => $request->amount,
             'Grade_id' => $request->grade_id ,
             'classroom_id' => $request->classrooms,
             'section_id' => $request->sections ,
+            'type' => $request->type ,
+            
         ]);
 
         return back();
@@ -44,10 +46,11 @@ class FeeRepository implements FeeRepositoryInterface{
         $fee->name = [ 'ar' => $request->Name , 'en' => $request->Name_en ] ;
         $fee->semester = $request->semester;
         $fee->academic_year = $request->academic_year ;
-       // $fee->amount = $request->amount ;
+        $fee->amount = $request->amount ;
         $fee->Grade_id = $request->grade_id ;
         $fee->classroom_id = $request->classrooms ;
         $fee->section_id = $request->sections;
+        $fee->type = $request->type;
         $fee->save();
 
         return back();

@@ -49,7 +49,7 @@
                                 <input type="text" class="form-control" id="Name_en" name="Name_en" >
                             </div>
                             <div class="col">
-                                <label for="inputName" class="control-label"> {{ trans('fee.amount') }}</label>
+                                <label for="inputName" class="control-label"> {{ trans('fees.amount') }}</label>
                                 <input type="text" class="form-control" id="amount" name="amount" >
                             </div>
 
@@ -86,6 +86,16 @@
                                     
                                 </select>
                             </div>
+
+                            <div class="col">
+                                <label for="inputName" class="control-label"> {{ trans('fees.type') }} </label>
+                                <select id="type" name="type" class="form-control">
+                                    <option value="1" > {{ trans('fees.school_expenses') }}</option>
+                                    <option value="2" > {{ trans('fees.bus_Expenses') }}</option>
+                                    <option value="3" > {{ trans('fees.uneform_Expenses') }}</option>
+                                    
+                                </select>
+                            </div>
                             
                         </div>
 
@@ -107,7 +117,7 @@
     
                                         
                                      
-                                    </select>
+                                    
                                 </div>
                                 
                             </div>

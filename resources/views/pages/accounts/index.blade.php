@@ -56,8 +56,9 @@
 											</tr>
 										</thead>
 										<tbody>
-										
+										  
                                             @foreach($fees as $fee)
+											<tr>
 											<td> {{ $loop->index+1}}</td>
 											<td>{{ $fee->name }}</td>
 											<td>{{ $fee->grades->name }}</td>
@@ -75,9 +76,9 @@
 											</td>
 
 											@include('pages.accounts.Delete');
-											
+										</tr>
 											@endforeach
-											
+										  
                                       
 																
 										
