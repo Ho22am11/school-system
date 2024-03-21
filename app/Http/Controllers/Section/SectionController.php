@@ -19,20 +19,7 @@ class SectionController extends Controller
      */
     public function index()
     {
-        /* example of relation many to many
-         * we have already relation between sections and teachers
-         * if we went know sections related teacher
-         * you give me id of the teacher
-         * ----------
-         * $teachers = Teacher::findOrFail($id);
-         * return $teachers->sections;  // sections her is relationship we make it in model Teacher
-         * -------
-         * and if we went know who is teachers of section
-         * -------
-         * $sections = Section::findOrFail($id);
-         * return $sections->teachers;
-
-        */
+   
         $grades = Grade::all();
         $sections = Section::all();
         $teachers = Teacher::all();
@@ -58,7 +45,6 @@ class SectionController extends Controller
             $sections->name =['en'=>$request->name_en , 'ar' => $request->name];
             $sections->grade_id =$request->grade_id;
             $sections->classroom_id =$request->classrooms;
-            $sections->status = 1;
             $sections->save();
             $sections->teachers()->attach($request->teacher_id);
 
