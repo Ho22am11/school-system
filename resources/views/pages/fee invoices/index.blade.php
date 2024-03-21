@@ -28,17 +28,26 @@
 @endsection
 @section('content')
 				<!-- row -->
+                <div class="row">
+					
+					
+				  	
                     <div class="col-xl-12">
 						<div class="card">
-                                                  
-                     
-                      
-                        
-                        <div class="row">
-                       
-                        
-                        <div class="table-responsive">
-                            <table class="table text-md-nowrap" id="example1">
+							
+							<div class="card-header pb-0">
+								<div class="d-flex justify-content-between">
+									<h4 class="card-title mg-b-0"> {{ trans('main_side.student_list')}}</h4>
+									<i class="mdi mdi-dots-horizontal text-gray"></i>
+								</div>
+							</div>
+							
+							<div class="card-body">
+								<div class="table-responsive">
+                                    <div>
+                                        <a href="{{ route('student.create')}}" class="btn btn-success btn-sm nextBtn btn-lg pull-right">{{ trans('main_side.add_studant')}}</a>
+                                </div><br>
+                                    <table class="table text-md-nowrap" id="example1">
                                 <thead>
                                     <tr>
                                         <th class="wd-5p border-bottom-0">#</th>

@@ -24,6 +24,8 @@ return [
     'graduated' => 'الخريجين' ,
     'graduated_add' => 'اضافه خريج' ,
     'graduated_list' => 'قائمة الخريجين' ,
+    'invoices' => 'الفواتير' ,
+
 
 
 

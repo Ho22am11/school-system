@@ -49,7 +49,7 @@
                                 <input type="hidden" value="{{ $student->classroom_id }}" name="classroom_id">
                             </div>
                             <div class="col">
-                                <label for="inputName" class="control-label"> {{ trans('students.name') }} </label>
+                                <label for="inputName" class="control-label"> {{ trans('fees.type') }} </label>
                                 <select id="type" name="type" class="form-control">   
                                     @foreach($fees as $fee)                               
                                      <option value="{{ $fee->id}}"  > 
@@ -71,7 +71,7 @@
                             </div>
 
                             <div class="col">
-                                <label for="inputName" class="control-label"> {{ trans('students.name') }} </label>
+                                <label for="inputName" class="control-label"> {{ trans('fees.amount') }} </label>
                                 <select id="amount" name="amount" class="form-control">   
                                     @foreach($fees as $fee)                               
                                      <option value="{{ $fee->amount}}" selected >{{ $fee->amount }}</option>
