@@ -22,4 +22,7 @@ return [
     'filename' => 'File Name' ,
     'created_at' => 'Add at' ,
     'Download' => 'Download' ,
+
+    'add_invoice' => 'Add Invoice' ,
+    'receipt' =>'Receipt' ,
 ];

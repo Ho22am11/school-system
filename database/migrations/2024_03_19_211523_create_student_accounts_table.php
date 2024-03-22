@@ -25,8 +25,7 @@ return new class extends Migration
         Schema::table('student_accounts' , function (Blueprint $table){
             $table->foreignId('fee_invoice_id')->references('id')->on('fee_invoices')->onDelete('cascade');
             $table->foreignId('student_id')->references('id')->on('students')->onDelete('cascade');
-            $table->foreignId('Grade_id')->references('id')->on('grades')->onDelete('cascade');
-            $table->foreignId('classroom_id')->references('id')->on('classrooms')->onDelete('cascade');
+            $table->foreignId('receipt_id')->references('id')->on('recept_students')->onDelete('cascade')->nullable();
             
         });
     }

@@ -20,4 +20,7 @@ return [
     'filename' => 'اسم الملف' ,
     'created_at' => 'اضيف في' ,
     'Download' => 'تنزيل' ,
+
+    'add_invoice' => 'اضافه فاتوره' ,
+    'receipt' =>'سند قبض' ,
 ];
