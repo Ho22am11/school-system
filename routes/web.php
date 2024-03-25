@@ -7,6 +7,7 @@ use App\Http\Controllers\Fees\FeeController;
 use App\Http\Controllers\Fees\FeeinvoicesController;
 use App\Http\Controllers\Section\SectionController;
 use App\Http\Controllers\Students\GraduatedController;
+use App\Http\Controllers\Students\ProcessingFeeController;
 use App\Http\Controllers\Students\PromotionController;
 use App\Http\Controllers\Students\ReceiptController;
 use App\Http\Controllers\Students\StudentController;
@@ -61,6 +62,7 @@ Route::group(
         Route::resource('/fee' , FeeController::class );
         Route::resource('/fee_invoices' , FeeinvoicesController::class );
         Route::resource('/recepit_student' , ReceiptController::class);
+        Route::resource('/processing_fee' , ProcessingFeeController::class);
         livewire::setUpdateRoute(function ($handle){
             return Route::post('/livewwire/update' , $handle);
         
@@ -74,7 +76,8 @@ Route::group(
         Route::resource('/student' , StudentController::class);
         Route::get('download_Attachments/{filename}/{studentname}' ,[StudentController::class , 'Download']);
         Route::post('/fee.update' , [FeeController::class , 'update'])->name('fee.updatef');
-        Route::post('/recepit_student' , [ReceiptController::class , 'update'])->name('recepit_student.updatef');
+        Route::post('/recepit_studentt' , [ReceiptController::class , 'update'])->name('recepit_student.updatef');
+        Route::post('/recepit_student' , [ReceiptController::class , 'store'])->name('recepit_student.store');
        
 
         

@@ -76,7 +76,7 @@
                                                             <a class="dropdown-item" href="{{ route('student.show' , $student->id )}}"><i style="color: #ffc107" class="far fa-eye "></i>&nbsp; {{ __('students.Student_details')}}</a>                                                           
 															 <a class="dropdown-item" href="{{ route('fee_invoices.show' , $student->id )}}"><i style="color: #0000cc" class="fa fa-edit"></i>&nbsp;{{ __('students.add_invoice')}}&nbsp;</a>
                                                             <a class="dropdown-item" href="{{ route('recepit_student.show' , $student->id )}}"><i style="color: #9dc8e2" class="fas fa-money-bill-alt"></i>&nbsp; &nbsp;{{ __('students.receipt')}}</a>
-                                                            <a class="dropdown-item" href=""><i style="color: #9dc8e2" class="fas fa-money-bill-alt"></i>&nbsp; &nbsp; استبعاد رسوم</a>
+                                                            <a class="dropdown-item" href="{{ route('processing_fee.show' , $student->id )}}"><i style="color: #9dc8e2" class="fas fa-money-bill-alt"></i>&nbsp; &nbsp;{{trans('students.Exemption_fee')}}</a>
                                                             <a class="dropdown-item" href=""><i style="color:goldenrod" class="fas fa-donate"></i>&nbsp; &nbsp;سند صرف</a>
                                                         </div>
                                                     </div>

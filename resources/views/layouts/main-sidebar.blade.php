@@ -158,6 +158,10 @@
 			   
 					
 					  <li><a class="slide-item" href="{{ route('fee_invoices.index') }}">{{trans('main_side.invoices')}}</a></li>
+
+					  <li><a class="slide-item" href="{{ route('recepit_student.index') }}">{{trans('students.receipt')}}</a></li>
+
+					  <li><a class="slide-item" href="{{ route('processing_fee.index') }}">{{trans('students.Exemption_fee')}}</a></li>
 				 
 
 				  </ul>

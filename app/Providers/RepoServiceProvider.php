@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Student;
 use Illuminate\Support\ServiceProvider;
 
 class RepoServiceProvider extends ServiceProvider
@@ -41,6 +42,10 @@ class RepoServiceProvider extends ServiceProvider
         $this->app->bind(
             'App\Repository\ReceiptStudentRepositoryInterface',
             'App\Repository\ReceiptStudentRepository'
+        );
+        $this->app->bind(
+            'App\Repository\ProcessingFeeRepositoryInterface',
+            'App\Repository\ProcessingFeeRepository'
         );
 
     }

@@ -25,4 +25,7 @@ return [
 
     'add_invoice' => 'Add Invoice' ,
     'receipt' =>'Receipt' ,
+
+    'Exemption_fee' =>'Exemption from tuition fees' ,
+    'Student_balance' => 'Student balance' ,
 ];

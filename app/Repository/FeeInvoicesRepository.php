@@ -40,8 +40,6 @@ class FeeInvoicesRepository implements FeeInvoicesRepositoryInterface{
         $account->type = 'invoices';
         $account->fee_invoice_id = $fee->id;
         $account->student_id =  $request->student_id;
-        $account->Grade_id =  $request->Grade_id;
-        $account->classroom_id  = $request->classroom_id;
         $account->Debit  = $request->amount;
         $account->credit  = 0.00;
         $account->save();

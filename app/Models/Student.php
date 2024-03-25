@@ -43,5 +43,9 @@ class Student extends Model
         return $this->belongsTo('App\Models\My_Parent' , 'parent_id');
 
     }
+
+    public function AccountStudent(){
+        return $this->hasMany('App\Models\StudentAccount' , 'student_id');
+    }
    
 }

@@ -23,4 +23,9 @@ return [
 
     'add_invoice' => 'اضافه فاتوره' ,
     'receipt' =>'سند قبض' ,
+
+    'Exemption_fee' =>'اعفاء الرسوم الدراسيه' ,
+    'Student_balance' => 'رصيد الطالب' ,
+
+
 ];
