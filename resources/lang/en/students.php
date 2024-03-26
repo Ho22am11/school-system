@@ -28,4 +28,5 @@ return [
 
     'Exemption_fee' =>'Exemption from tuition fees' ,
     'Student_balance' => 'Student balance' ,
+    'Expenditure_voucher' => 'Expenditure voucher' ,
 ];

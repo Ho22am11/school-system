@@ -16,7 +16,8 @@ return new class extends Migration
             $table->date('date');
             $table->decimal('Debit')->nullable();
             $table->decimal('credit')->nullable();
-            $table->foreignId('receipt_id')->references('id')->on('recept_students')->onDelete('cascade');
+            $table->foreignId('receipt_id')->nullable()->references('id')->on('recept_students')->onDelete('cascade');
+            $table->foreignId('payment_id')->nullable()->references('id')->on('payment_students')->onDelete('cascade');
             $table->timestamps();
 
         });

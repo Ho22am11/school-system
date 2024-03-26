@@ -26,6 +26,8 @@ return [
 
     'Exemption_fee' =>'اعفاء الرسوم الدراسيه' ,
     'Student_balance' => 'رصيد الطالب' ,
+    'Expenditure_voucher' => 'سند صرف' ,
+
 
 
 ];

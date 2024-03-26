@@ -68,8 +68,9 @@
                                                         <td>{{ $Student->parents->Name_Father }}</td>
                                                         <th scope="row">{{trans('parent.name_mother')}}</th>
                                                         <td>{{ $Student->parents->Name_Mother }}</td>
-                                                        <th scope="row"></th>
-                                                        <th ></th>
+                                                        <th scope="row">{{trans('students.Student_balance')}}</th>
+                                                        <td>{{ number_format($Student->AccountStudent->sum('Debit') - $Student->AccountStudent->sum('credit') )}}</td>
+                                                        
                                                         
                                                         <th scope="row"></th>
                                                         <td></td>

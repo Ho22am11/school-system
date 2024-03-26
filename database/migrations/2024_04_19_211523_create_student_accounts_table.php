@@ -27,6 +27,7 @@ return new class extends Migration
             $table->foreignId('student_id')->references('id')->on('students')->onDelete('cascade');
             $table->foreignId('receipt_id')->nullable()->references('id')->on('recept_students')->onDelete('cascade');
             $table->foreignId('processing_id')->nullable()->references('id')->on('processing_fees')->onDelete('cascade');
+            $table->foreignId('payment_id')->nullable()->references('id')->on('payment_students')->onDelete('cascade');
             
         });
     }
