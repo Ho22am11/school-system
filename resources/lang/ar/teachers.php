@@ -16,5 +16,7 @@ return [
      'teacher_chose' => 'حدد معلم' ,
     'Joining_Date'=>'تاريخ التعين',
     'Address'=>'العنوان',
+    'attendances' => 'الحضور' ,
+    ''
 
 ];

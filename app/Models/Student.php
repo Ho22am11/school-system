@@ -47,5 +47,10 @@ class Student extends Model
     public function AccountStudent(){
         return $this->hasMany('App\Models\StudentAccount' , 'student_id');
     }
+
+    public function Attendance(){
+        return $this->hasMany('App\Models\Attendance' , 'student_id');
+    }
+
    
 }

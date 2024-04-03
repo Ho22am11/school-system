@@ -169,6 +169,20 @@
 				  </ul>
 			  </li>
 
+			  <!-- attendances-->
+
+				<li class="side-item side-item-category">{{trans('main_side.attendances')}}</li>
+
+				<li class="slide">
+				  <a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><i class="fa-solid fa-user-vneck"></i>{{trans('fees.the_accounts')}}</a>
+				 <ul class="slide-menu">
+					  
+					  <li><a class="slide-item" href="{{ route('attendances.index') }}">{{trans('main_side.section_list')}}</a></li>
+			   
+
+				  </ul>
+			  </li>
+
 
 					
 					

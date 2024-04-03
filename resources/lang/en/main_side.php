@@ -25,6 +25,8 @@ return [
     'graduated_add' => 'Add Graduated' ,
     'graduated_list' => 'List Graduated' ,
     'invoices' => 'Invoices' ,
+    'attendances' => 'Attendances' ,
+
     
 
 ];

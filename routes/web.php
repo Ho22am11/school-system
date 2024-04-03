@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AttendanceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Grade\GradeController;
 use App\Http\Controllers\Classroom\ClassroomController;
@@ -65,6 +66,7 @@ Route::group(
         Route::resource('/recepit_student' , ReceiptController::class);
         Route::resource('/processing_fee' , ProcessingFeeController::class);
         Route::resource('/payment_student' , PaymentController::class);
+        Route::resource('/attendances' , AttendanceController::class);
         livewire::setUpdateRoute(function ($handle){
             return Route::post('/livewwire/update' , $handle);
         
@@ -88,16 +90,6 @@ Route::group(
     });
 
     
-
-   
-
-
-    
-
-
-
-
-
 
 require __DIR__.'/auth.php';
 

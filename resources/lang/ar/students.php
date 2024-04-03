@@ -28,6 +28,10 @@ return [
     'Student_balance' => 'رصيد الطالب' ,
     'Expenditure_voucher' => 'سند صرف' ,
 
+    'present' => 'حاضر ' ,
+    'absent' => 'غائب ' ,
+
+
 
 
 ];
