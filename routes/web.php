@@ -4,6 +4,7 @@ use App\Http\Controllers\AttendanceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Grade\GradeController;
 use App\Http\Controllers\Classroom\ClassroomController;
+use App\Http\Controllers\Exams\ExamController;
 use App\Http\Controllers\Fees\FeeController;
 use App\Http\Controllers\Fees\FeeinvoicesController;
 use App\Http\Controllers\Section\SectionController;
@@ -69,6 +70,7 @@ Route::group(
         Route::resource('/payment_student' , PaymentController::class);
         Route::resource('/attendances' , AttendanceController::class);
         Route::resource('/subjects' , SubjectController::class);
+        Route::resource('/exams' , ExamController::class);
         livewire::setUpdateRoute(function ($handle){
             return Route::post('/livewwire/update' , $handle);
         

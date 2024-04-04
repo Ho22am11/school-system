@@ -194,6 +194,18 @@
 				  </ul>
 			  </li>
 
+			     <!-- exam -->
+
+				<li class="slide">
+					<a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><i class="fa-solid fa-user-vneck"></i>{{trans('main_side.exam')}}</a>
+				   <ul class="slide-menu">
+						
+						<li><a class="slide-item" href="{{ route('exams.index') }}">{{trans('main_side.exam')}}</a></li>
+				 
+  
+					</ul>
+				</li>
+
 
 					
 					

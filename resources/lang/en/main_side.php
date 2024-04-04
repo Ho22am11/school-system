@@ -27,6 +27,7 @@ return [
     'invoices' => 'Invoices' ,
     'attendances' => 'Attendances' ,
     'subject' => 'Academic subjects' ,
+    'exam' => 'Exam' ,
 
     
 

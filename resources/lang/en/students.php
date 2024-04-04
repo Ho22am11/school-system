@@ -34,4 +34,9 @@ return [
 
     'present' => 'present' ,
     'absent' => 'absent' ,
+
+    'term' => 'Term' ,
+    'academic_year' => 'Academic Year' ,
+    'add_exam' => 'Add Exam' ,
+
 ];

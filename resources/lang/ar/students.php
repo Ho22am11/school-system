@@ -29,6 +29,9 @@ return [
     'present' => 'حاضر ' ,
     'absent' => 'غائب ' ,
 
+    'term' => 'ترم' ,
+    'academic_year' => 'السنه الدراسية' ,
+    'add_exam' => 'اضافه امتحان ' ,
 
 
 
