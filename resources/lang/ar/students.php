@@ -10,11 +10,7 @@ return [
     'religions' => 'الدين' ,
     'religions_chose'=>'حدد الدين' ,
     'yesr_birth' => 'سنه الميلاد',
-    'Gender'=>'Gender',
-    'Gender_chose'=>'Chose Gender',
-    'teacher_chose'=>'Chose Teacher',
-    'Joining_Date'=>'Joining_Date',
-    'Address'=>'Address',
+
 
     'Student_details' => 'تفاصيل الطالب' ,
     'filename' => 'اسم الملف' ,
@@ -22,6 +18,8 @@ return [
     'Download' => 'تنزيل' ,
 
     'add_invoice' => 'اضافه فاتوره' ,
+    'add_subject' => 'اضافه المواد الدراسية' ,
+
     'receipt' =>'سند قبض' ,
 
     'Exemption_fee' =>'اعفاء الرسوم الدراسيه' ,

@@ -26,6 +26,7 @@ return [
     'graduated_list' => 'List Graduated' ,
     'invoices' => 'Invoices' ,
     'attendances' => 'Attendances' ,
+    'subject' => 'Academic subjects' ,
 
     
 

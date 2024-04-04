@@ -5,7 +5,8 @@ return [
     'the_students' => 'The Students',
     'Email'=>'Email',
     'Password'=>'Password',
-    'name' => 'name' ,
+    'name' => 'Name ' ,
+    'name_en' => 'name EN' ,
     'Name_ar'=>'Name Student ARA',
     'Name_en'=>'Name Student EN',
     'Nationality_chose'=>'Chose Nationality',
@@ -24,6 +25,7 @@ return [
     'Download' => 'Download' ,
 
     'add_invoice' => 'Add Invoice' ,
+    'add_subject' => 'Add Subject' ,
     'receipt' =>'Receipt' ,
 
     'Exemption_fee' =>'Exemption from tuition fees' ,

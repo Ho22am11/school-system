@@ -13,6 +13,7 @@ use App\Http\Controllers\Students\ProcessingFeeController;
 use App\Http\Controllers\Students\PromotionController;
 use App\Http\Controllers\Students\ReceiptController;
 use App\Http\Controllers\Students\StudentController;
+use App\Http\Controllers\Subject\SubjectController;
 use App\Http\Controllers\TeacherController ;
 use Livewire\Livewire;
 /*
@@ -67,6 +68,7 @@ Route::group(
         Route::resource('/processing_fee' , ProcessingFeeController::class);
         Route::resource('/payment_student' , PaymentController::class);
         Route::resource('/attendances' , AttendanceController::class);
+        Route::resource('/subjects' , SubjectController::class);
         livewire::setUpdateRoute(function ($handle){
             return Route::post('/livewwire/update' , $handle);
         
