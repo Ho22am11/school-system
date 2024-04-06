@@ -35,6 +35,7 @@ return [
     'Choose' => 'Choose',
     'Attachments' => 'Attachments',
     'Processes' => 'Processes',
+    'add_quizze' => 'Add Quizze' ,
 
 
 ];

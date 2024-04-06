@@ -28,6 +28,7 @@ return [
     'attendances' => 'Attendances' ,
     'subject' => 'Academic subjects' ,
     'exam' => 'Exam' ,
+    'quizzes' => 'Quizzes' ,
 
     
 

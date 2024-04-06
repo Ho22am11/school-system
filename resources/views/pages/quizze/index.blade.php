@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-{{ trans('main_side.exam')}}
+{{ trans('main_side.quizzes')}}
 @stop
 @section('css')
 
@@ -10,7 +10,7 @@
 				<div class="breadcrumb-header justify-content-between">
 					<div class="my-auto">
 		 				<div class="d-flex">
-							<h4 class="content-title mb-0 my-auto">{{ trans('main_side.exam')}}</h4>
+							<h4 class="content-title mb-0 my-auto">{{ trans('main_side.quizzes')}}</h4>
 						</div>
 					</div>
 					
@@ -21,7 +21,7 @@
 @section('content')
 				<!-- row -->
 				<div class="row">
-					
+					  
 					
 				  	
                     <div class="col-xl-12">
@@ -32,7 +32,7 @@
 							<div class="card-body">
 								<div class="table-responsive">
                                     <div>
-                                        <a href="{{ route('exams.create')}}" class="btn btn-success btn-sm nextBtn btn-lg pull-right">{{ trans('students.add_exam')}}</a>
+                                        <a href="{{ route('quizzes.create')}}" class="btn btn-success btn-sm nextBtn btn-lg pull-right">{{ trans('Parent_trans.add_quizze')}}</a>
                                 </div><br>
                                     <table class="table text-md-nowrap" id="example1">
 										<thead>
@@ -40,8 +40,10 @@
                                                 <th class="wd-5p border-bottom-0">#</th>
 												<th class="wd-15p border-bottom-0">{{ trans('students.name')}}</th>
 												<th class="wd-15p border-bottom-0">{{ trans('main_side.subject')}}</th>
-                                                <th class="wd-15p border-bottom-0">{{ trans('students.term')}}</th>
-                                                <th class="wd-15p border-bottom-0">{{ trans('students.academic_year')}}</th>
+                                                <th class="wd-15p border-bottom-0">{{ trans('teachers.Name_Teacher')}}</th>
+                                                <th class="wd-15p border-bottom-0">{{ trans('main_side.Grade')}}</th>
+                                                <th class="wd-15p border-bottom-0">{{ trans('main_side.classrooms')}}</th>
+                                                <th class="wd-15p border-bottom-0">{{ trans('main_side.section')}}</th>
                                                 <th class="wd-15p border-bottom-0">{{ trans('grade_list.process') }} </th>
 												
                                             
@@ -49,16 +51,20 @@
 										</thead>
 										<tbody>
 									
-											@foreach ($exams as $exam)
+											@foreach ($quizzes as $quizze)
 												
 											
 											<tr>
 
 												<td>{{ $loop->index+1}}</td>
-												<td>{{ $exam->name}}</td>
-												<td>{{ $exam->subjects->name }}</td>
-												<td>{{ $exam->term }}</td>
-												<td>{{ $exam->academic_year}}</td>
+												<td>{{ $quizze->name}}</td>
+												<td>{{ $quizze->subjects->name }}</td>
+												<td>{{ $quizze->teachers->Name }}</td>
+												<td>{{ $quizze->grades->name }}</td>
+												<td>{{ $quizze->classrooms->name }}</td>
+												<td>{{ $quizze->sections->name }}</td>
+
+									
 
 											</tr>
 

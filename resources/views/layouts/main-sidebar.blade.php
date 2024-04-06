@@ -206,6 +206,18 @@
 					</ul>
 				</li>
 
+				  <!-- quizzes -->
+
+				  <li class="slide">
+					<a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><i class="fa-solid fa-user-vneck"></i>{{trans('main_side.quizzes')}}</a>
+				   <ul class="slide-menu">
+						
+						<li><a class="slide-item" href="{{ route('quizzes.index') }}">{{trans('main_side.quizzes')}}</a></li>
+				 
+  
+					</ul>
+				</li>
+
 
 					
 					

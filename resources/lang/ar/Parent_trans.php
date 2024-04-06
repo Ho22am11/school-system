@@ -39,6 +39,9 @@ return [
     'Attachments' => 'المرفقات',
     'Processes' => 'العمليات',
 
+    'add_quizze' => 'اضافه اختبار' ,
+
+
 
 
 
