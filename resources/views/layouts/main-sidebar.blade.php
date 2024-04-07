@@ -213,11 +213,11 @@
 				   <ul class="slide-menu">
 						
 						<li><a class="slide-item" href="{{ route('quizzes.index') }}">{{trans('main_side.quizzes')}}</a></li>
+						<li><a class="slide-item" href="{{ route('questions.index') }}">{{trans('main_side.queastions')}}</a></li>
 				 
   
 					</ul>
 				</li>
-
 
 					
 					
