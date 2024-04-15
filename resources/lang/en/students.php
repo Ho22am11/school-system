@@ -38,5 +38,9 @@ return [
     'term' => 'Term' ,
     'academic_year' => 'Academic Year' ,
     'add_exam' => 'Add Exam' ,
+    'add_class' => 'Add Online class',
+    'time' => 'time' ,
+    'start_in' => 'Start In' ,
+    'link' => 'The link' ,
 
 ];

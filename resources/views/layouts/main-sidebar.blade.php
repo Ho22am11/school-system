@@ -193,6 +193,18 @@
 
 				  </ul>
 			  </li>
+			  	     <!-- online_classes -->
+
+				<li class="slide">
+					<a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><i class="fa-solid fa-user-vneck"></i>{{trans('main_side.online_classes')}}</a>
+				   <ul class="slide-menu">
+						
+						<li><a class="slide-item" href="{{ route('online_classes.index') }}">{{trans('main_side.connect_with_zoom_direct')}}</a></li>
+						<li><a class="slide-item" href="{{ route('exams.index') }}">{{trans('main_side.connect_with_zoom_indirect')}}</a></li>
+				 
+  
+					</ul>
+				</li>
 
 			     <!-- exam -->
 

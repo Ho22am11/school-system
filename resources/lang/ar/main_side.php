@@ -29,6 +29,10 @@ return [
     'exam' => 'الامتحانات' ,
     'quizzes' => 'الاختبارات' ,
     'queastions' => 'الاسأله' ,
+    'online_classes' => 'حصص اون لاين',
+    'connect_with_zoom_direct' => 'اتصال مباشر' ,
+    'connect_with_zoom_indirect' => 'اتصال غير مباشر ' ,
+
 
 
 

@@ -30,6 +30,9 @@ return [
     'exam' => 'Exam' ,
     'quizzes' => 'Quizzes' ,
     'queastions' => 'Queastions' ,
+    'online_classes' => 'Online Classes' ,
+    'connect_with_zoom_direct' => 'Connect With Zoom Direct' ,
+    'connect_with_zoom_indirect' => 'Connect With Zoom Indirect' ,
 
     
 
