@@ -30,6 +30,7 @@ return [
     'exam' => 'Exam' ,
     'quizzes' => 'Quizzes' ,
     'queastions' => 'Queastions' ,
+    'library' => 'Library' ,
 
     
 

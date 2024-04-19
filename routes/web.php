@@ -11,6 +11,7 @@ use App\Http\Controllers\Quizze\QuestionController;
 use App\Http\Controllers\Quizze\QuizzeController;
 use App\Http\Controllers\Section\SectionController;
 use App\Http\Controllers\Students\GraduatedController;
+use App\Http\Controllers\Students\LibraryController;
 use App\Http\Controllers\Students\PaymentController;
 use App\Http\Controllers\Students\ProcessingFeeController;
 use App\Http\Controllers\Students\PromotionController;
@@ -75,6 +76,7 @@ Route::group(
         Route::resource('/exams' , ExamController::class);
         Route::resource('/quizzes' , QuizzeController::class);
         Route::resource('/questions' , QuestionController::class);
+        Route::resource('/libraries' , LibraryController::class);
         livewire::setUpdateRoute(function ($handle){
             return Route::post('/livewwire/update' , $handle);
         

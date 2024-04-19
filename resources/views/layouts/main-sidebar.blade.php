@@ -219,6 +219,20 @@
 					</ul>
 				</li>
 
+				
+				  <!-- library -->
+
+				  <li class="slide">
+					<a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><i class="fa-solid fa-user-vneck"></i>{{trans('main_side.library')}}</a>
+				   <ul class="slide-menu">
+						
+						<li><a class="slide-item" href="{{ route('libraries.index') }}">{{trans('Library.list_book')}}</a></li>
+						<li><a class="slide-item" href="{{ route('questions.index') }}">{{trans('main_side.queastions')}}</a></li>
+				 
+  
+					</ul>
+				</li>
+
 					
 					
 				       
