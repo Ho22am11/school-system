@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ URL::asset('assets/plugins/telephoneinput/telephoneinput-rtl.css') }}">
 @endsection
 @section('title')
-    اضافة فاتورة
+{{ trans('main_side.Teachers')}}
 @stop
 
 @section('page-header')
@@ -20,8 +20,7 @@
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h4 class="content-title mb-0 my-auto">الفواتير</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/
-                    اضافة فاتورة</span>
+                <h4 class="content-title mb-0 my-auto">{{ trans('main_side.Teachers')}}</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0"></span>
             </div>
         </div>
     </div>

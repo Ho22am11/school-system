@@ -63,7 +63,7 @@
                             <a class="modal-effect btn btn-outline-primary btn-block" data-effect="effect-scale" data-toggle="modal"
                              href="#modaldemo8"> {{ trans('grade_list.grade_add') }}
                             </a>
-                        </div>
+                        </div><br>
                         <div class="row">
                        
                         
@@ -103,7 +103,7 @@
                                                 href="#exampleModal2" data-id="{{ $grade->id }}"  data-grade_name="{{ $grade->getTranslation('name' , 'ar') }}"
                                                 data-grade_name_en="{{ $grade->getTranslation('name' , 'en') }}"
                                                      data-toggle="modal"
-                                                data-target="#exampleModal2">تعديل</button>
+                                                data-target="#exampleModal2">{{ __('grade_list.edit')}}</button>
                                  
 
                                             </td>
@@ -112,7 +112,7 @@
 
                                                 <form action="{{ route('grade.delete' , [$grade->id])}}" method="post">
                                                     @csrf
-                                                    <button type="submit"  class="btn btn-outline-danger btn-sm">حذف</button>
+                                                    <button type="submit"  class="btn btn-outline-danger btn-sm">{{ __('grade_list.delete')}}</button>
                                                 </form>
 
                                     

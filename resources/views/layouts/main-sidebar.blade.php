@@ -60,11 +60,8 @@
 					<li class="slide">
 						<a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><i class="fa-solid fa-user-vneck"></i>{{trans('main_side.parent')}}</a>
 					   <ul class="slide-menu">
-
-						<li><a class="slide-item" href="{{ url('/show_form') }}">{{trans('main_side.parent_add')}}</a></li>
-                     
                           
-					   <li><a class="slide-item" href="{{ url('/' . $page='roles') }}">{{trans('main_side.parent_list')}}</a></li>
+					   <li><a class="slide-item" href="{{ url('/show_form') }}">{{trans('main_side.parent_list')}}</a></li>
 
 						</ul>
 					</li>
@@ -76,10 +73,10 @@
 						<a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><i class="fa-solid fa-user-vneck"></i>{{trans('main_side.teacher')}}</a>
                        <ul class="slide-menu">
                             
-							<li><a class="slide-item" href="{{  url('/' . $page='teacher')}}">{{trans('main_side.parent_add')}}</a></li>
+							<li><a class="slide-item" href="{{  url('/' . $page='teacher')}}">{{trans('main_side.Teachers')}}</a></li>
                      
                           
-							<li><a class="slide-item" href="{{ url('/' . $page='roles') }}">{{trans('main_side.parent_list')}}</a></li>
+							<li><a class="slide-item" href="{{ route('add.teacher') }}">{{trans('teachers.Add_Teacher')}}</a></li>
                        
 
 						</ul>

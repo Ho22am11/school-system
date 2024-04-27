@@ -50,15 +50,6 @@
                        </div>
                        @endif
 
-                        @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                          @endif
                         <div class="col-sm-6 col-md-4 col-xl-3">
                             <a class="modal-effect btn btn-outline-primary btn-block" data-effect="effect-scale" data-toggle="modal"
                              href="#exampleModal"> {{ trans('classrooms.classroom_add') }}
@@ -66,23 +57,7 @@
                             <br><br>
                         </div>
                         <div class="row">
-                        <div class="card-header pb-0">
-                            <form action="{{ route('select')}}" method="POST" role="search" autocomplete="off">
-                                @csrf
-                               
-                                    <select   id="grade_id" name="grade_id" class="form-control">
-                                        <option value='حدد المرحله  ' selected> {{ $name->name ?? 'حدد المرحله ' }}  </option>
-
-                                        @foreach ($Grades as $Grade)
-                                            <option value="{{ $Grade->id }}">{{ $Grade->name }}</option>
-                                        @endforeach
-                                    </select>
-                                    <button type="submit" class="btn btn-success">{{ trans('grade_list.confirm')}}</button>
-                                    
-                             
-                            </form>
-                        </div>
-                        <br><br>
+                        
                        
                         
                         <div class="table-responsive">
@@ -208,7 +183,7 @@
                                             :</label>
 
                                             <div class="box">
-                                                <select class="fancyselect" name="Grade_id">
+                                                <select class="form-control" name="Grade_id">
                                                     @foreach ($Grades as $Grade)
                                                         <option value="{{ $Grade->id }}">{{ $Grade->name }}</option>
                                                     @endforeach
@@ -217,21 +192,9 @@
 
                                         </div>
 
-                                        <div class="col">
-                                            <label for="Name_en"
-                                                class="mr-sm-2"> {{ trans('grade_list.process')}} 
-                                                :</label>
-                                            <input class="btn btn-danger btn-block" data-repeater-delete
-                                                type="button" value="{{ trans('grade_list.delete')}}" />
-                                        </div>
+                                        
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row mt-20">
-                                <div class="col-12">
-                                    <input class="button" data-repeater-create type="button" value="{{ trans('classrooms.add_row')}}"/>
-                                </div>
-
                             </div>
 
                             <div class="modal-footer">
