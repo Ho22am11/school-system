@@ -49,7 +49,7 @@ class StudentRepository implements StudentRepositoryInterface {
         $students->academic_year = $request->academic_year;
         $students->save();
      
-        if($request->hasfile('photos'))
+        if($request->has ('photos'))
         {
             foreach($request->file('photos') as $file){
                 $name = $file->getClientOriginalName();
