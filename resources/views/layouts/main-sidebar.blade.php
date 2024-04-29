@@ -26,46 +26,27 @@
 					<li class="slide">
 						<a class="side-menu__item"  href="{{ url('/dashboard') }}"><i class="fa-solid fa-user-vneck"></i>{{ trans('main_side.Dashboard') }}</a>
 					  
-					</li>				
-
-				<li class="slide">
-					<a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><i class="fa-solid fa-user-vneck"></i>{{trans('main_side.Grade')}}</a>
-				   <ul class="slide-menu">
-						
-					<li><a class="slide-item" href="{{ url('/' . $page='grade') }}">{{ trans('main_side.grade_list')}}</a></li>
-  
-					</ul>
-				</li>
-					
-
-					<li class="slide">
-						<a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><i class="fa-solid fa-user-vneck"></i>{{trans('main_side.classrooms')}}</a>
-					   <ul class="slide-menu">
-
-						<li><a class="slide-item" href="{{ url('/' . $page='classroom') }}">{{ trans('main_side.classrooms_list')}}</a></li>
-
-						</ul>
-					</li>
-
-					<li class="slide">
-						<a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><i class="fa-solid fa-user-vneck"></i>{{trans('main_side.section')}}</a>
-					   <ul class="slide-menu">
-
-						<li><a class="slide-item" href="{{ url('/' . $page='section') }}">{{trans('main_side.section_list')}}</a></li>
-
-						</ul>
-					</li>
-
+					</li>	
 					
 					<li class="slide">
-						<a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><i class="fa-solid fa-user-vneck"></i>{{trans('main_side.parent')}}</a>
-					   <ul class="slide-menu">
-                          
-					   <li><a class="slide-item" href="{{ url('/show_form') }}">{{trans('main_side.parent_list')}}</a></li>
+						<a class="side-menu__item"  href="{{ url('/' . $page='grade') }}"><i class="fa-solid fa-user-vneck"></i>{{ trans('main_side.Grade') }}</a>
+					  
+					</li>	
 
-						</ul>
+					<li class="slide">
+						<a class="side-menu__item"  href="{{ url('/' . $page='classroom') }}"><i class="fa-solid fa-user-vneck"></i>{{ trans('main_side.classrooms') }}</a>
+					  
+					</li>	
+
+					<li class="slide">
+						<a class="side-menu__item"  href="{{ url('/' . $page='section') }}"><i class="fa-solid fa-user-vneck"></i>{{ trans('main_side.section') }}</a>
+					  
+					</li>	
+
+					<li class="slide">
+						<a class="side-menu__item"  href="{{ url('/show_form') }}"><i class="fa-solid fa-user-vneck"></i>{{ trans('main_side.parent') }}</a>
+					  
 					</li>
-                  
 
 					  <!-- Teachers-->
 

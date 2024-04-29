@@ -32,12 +32,7 @@ class ClassroomController extends Controller
     public function store(Request $request)
     {
        try{
-        if(Classroom::where('name->ar',$request->name)->orwhere('name->en' ,$request->name_class_en )->exists()){
-            return redirect()->back()->withErrors(trans('message.already_exist'));
-
-        }
-
-      
+        
     
         Classroom::create([
             'name' => ['en' => $request->name_class_en , 'ar' => $request->name],

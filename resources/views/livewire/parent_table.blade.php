@@ -37,8 +37,8 @@
                 <td>{{ $parent->Email }}</td>
                 <td>{{ $parent->Phone_Father }}</td>
                 <td>{{ $parent->Address_Father }}</td>
-                <td>{{ $parent->status_father_id}}</td>
-                <td>{{ $parent->status_Mother_id}}</td>
+                <td>{{ $parent->statusfather->name}}</td>
+                <td>{{ $parent->statusmother->name }}</td>
                 <td> 
                     <button wire:click="edit({{ $parent->id }})" title="{{ trans('Grades_trans.Edit') }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
                 </td>

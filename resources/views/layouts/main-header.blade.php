@@ -62,7 +62,7 @@
 								<div class="dropdown-menu dropdown-menu-left dropdown-menu-arrow" x-placement="bottom-end">
 									<ul style="direction: rtl;">
 										@if(LaravelLocalization::getCurrentLocale() == 'en')
-											<li class="">
+											<li >
 												<a href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}" class="dropdown-item d-flex">
 													<span class="avatar ml-3 align-self-center bg-transparent"><img src="{{URL::asset('assets/img/flags/Palestine_flag.jpg')}}" alt="Arabic Flag"></span>
 													<div class="d-flex">

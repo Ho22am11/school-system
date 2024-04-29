@@ -70,7 +70,7 @@ class AddParent extends Component
             'Phone_Father' => 'required',
             'Nationality_Father_id' => 'required',
             'Religion_Father_id' => 'required',
-            'Address_Father' => 'required',
+            
         ]);
 
         $this->currentStep = 2;
@@ -86,7 +86,7 @@ class AddParent extends Component
                 'Job_Mother_en' => 'required',
                 'Nationality_Mother_id' => 'required',
                 'Religion_Mother_id' => 'required',
-                'Address_Mother' => 'required',
+              
         
 
         ]);

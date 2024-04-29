@@ -14,8 +14,16 @@ class My_Parent extends Model
     protected $table = 'my__parents' ; // name table diffrent about name model
     protected $guarded = [];
 
-    public function status(){
-        return $this->belongsTo(Status::class);
+
+
+    public function statusfather(){
+        return $this->belongsTo('App\Models\Status' , 'status_father_id');
+
+    }
+
+    public function statusmother(){
+        return $this->belongsTo('App\Models\Status' , 'status_Mother_id');
+
     }
 
   
