@@ -60,11 +60,11 @@
 												<td>{{ $student->sections->name}}</td>
 												<td>{{ $student->genders->name}}</td>
 												<td>
-													<button type="button" class="btn btn-outline-succsses" data-toggle="modal" data-target="#Return_Student{{ $student->id}}">
+													<button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#Return_Student{{ $student->id}}">
 														{{ __('promotion.review_student')}}
 													  </button>
-													  <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#Delete{{$student->id}}">
-														{{ __('promotion.review_student')}}
+													  <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#Delete{{$student->id}}">
+														{{ __('grade_list.delete')}}
 													  </button>
 													
 												</td>

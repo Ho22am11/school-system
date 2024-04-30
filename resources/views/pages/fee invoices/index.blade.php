@@ -82,7 +82,11 @@
 											<td>{{ $fee->grades->name }}</td>
 											<td>{{ $fee->classrooms->name }}</td>
 											<td>{{ $fee->amount }}</td>
-                                            <td></td>
+                                            <td><button class="btn btn-outline-success btn-sm">{{ trans('grade_list.edit') }}</button>
+									
+												<button class="btn btn-outline-danger btn-sm ">{{ trans('grade_list.delete') }}</button>
+										 
+												</td>
 											
 											
 											

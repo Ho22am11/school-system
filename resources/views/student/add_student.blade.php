@@ -189,7 +189,7 @@
                         
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="academic_year">gdgdgs : <span class="text-danger"></label>
+                                <label for="academic_year"> : <span class="text-danger"></label>
                                 <input type="file" accept="image/*" name="photos[]" multiple>
                     
                             </div>

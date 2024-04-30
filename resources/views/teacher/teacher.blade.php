@@ -69,7 +69,13 @@
 												<td>{{ $teacher->specializations->name}}</td>
 												<td>{{ $teacher->genders->name}}</td>
 												<td>{{ $teacher->Address}}</td>
-												<td></td>
+										
+												<td><button class="btn btn-outline-success btn-sm">{{ trans('grade_list.edit') }}</button>
+									
+												<button class="btn btn-outline-danger btn-sm ">{{ trans('grade_list.delete') }}</button>
+										 
+												</td>
+								
 											</tr>
 								
 											@endforeach

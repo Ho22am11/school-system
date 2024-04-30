@@ -121,16 +121,10 @@
 			  <!-- attendances-->
 
 
-
-				<li class="slide">
-				  <a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><i class="fa-solid fa-user-vneck"></i>{{trans('main_side.attendances')}}</a>
-				 <ul class="slide-menu">
-					  
-					  <li><a class="slide-item" href="{{ route('attendances.index') }}">{{trans('main_side.section_list')}}</a></li>
-			   
-
-				  </ul>
-			  </li>
+			  <li class="slide">
+				<a class="side-menu__item"  href="{{ route('attendances.index') }}"><i class="fa-solid fa-user-vneck"></i>{{ trans('main_side.attendances') }}</a>
+			  
+			</li>
 
 			   <!-- subjects-->
 
