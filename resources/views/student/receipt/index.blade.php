@@ -55,7 +55,7 @@
                                  <tr>
                                  
                                     <td>{{ $loop->iteration}}</td>
-                                    <td> {{ $receipt->student->name}}</td>
+                                    <td> </td>
                                     <td> {{ $receipt->Debit }}</td>
                                     <td> 
                                         <a href="{{ route('recepit_student.edit' , $receipt->id )}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>

@@ -29,6 +29,7 @@ return [
     'exam' => 'الامتحانات' ,
     'quizzes' => 'الاختبارات' ,
     'queastions' => 'الاسأله' ,
+    'attendances' => 'الغياب' ,
 
 
 

@@ -41,7 +41,7 @@ class AttendanceRepository implements AttendanceRepositoryInterface{
                 'Grade_id' => $request->Grade_id,
                 'classroom_id' => $request->classroom_id,
                 'section_id' => $request->section_id,
-                'teacher_id' => 1 ,
+
             ]);
 
             

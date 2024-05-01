@@ -65,7 +65,7 @@
                                     @foreach($fees as $fee)
 											<tr>
 											<td> {{ $loop->index+1}}</td>
-											<td>{{ $fee->students->name }}</td>
+											<td>{{ $fee->students->name  ?? 'N/A' }}</td>
 											<td>@if($fee->type == 1)
 
                                                 {{ trans('fees.school_expenses') }}

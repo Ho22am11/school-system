@@ -53,7 +53,7 @@ class ReceiptStudentRepository implements ReceiptStudentRepositoryInterface{
 
       DB::commit();
 
-      return redirect()->route('recepit_student.index');
+      return back();
 
     }
 

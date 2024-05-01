@@ -11,6 +11,9 @@ class ReceptStudent extends Model
 
     protected $guarded=[];
     
+
+
+       
     public function student()
     {
         return $this->belongsTo('App\Models\Student' , 'student_id');
