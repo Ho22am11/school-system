@@ -29,7 +29,7 @@ This  School management system.
 ```bash
 composer install
 ```
-- create database in your divece by name invoices 
+- create database in your divece by name laravel 
 
 *run this command in terminal or CMD*
 
