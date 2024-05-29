@@ -29,7 +29,8 @@ This  School management system.
 ```bash
 composer install
 ```
-- create database in your divece by name laravel 
+-Copy .env.example file to .env and edit database credentials there
+
 
 *run this command in terminal or CMD*
 
