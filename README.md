@@ -49,7 +49,7 @@ php artisan db seed
 - login by email is admin@rscoder.com and password is 123456
 
 ## link video
-- https://www.linkedin.com/posts/hossam-harraz-818b57254_laravel-php-activity-7121092849625935872-oE3-?utm_source=share&utm_medium=member_desktop
+- https://www.linkedin.com/feed/update/urn:li:activity:7192095217192218625/
 
 
 
